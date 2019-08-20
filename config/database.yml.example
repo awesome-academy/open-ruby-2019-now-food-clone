@@ -1,0 +1,21 @@
+default: &default
+  adapter: mysql2
+  encoding: utf8
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: root
+  password:
+  socket: /var/run/mysqld/mysqld.sock
+
+development:
+  <<: *default
+  database: open-ruby-2019-now-food-clone_development
+
+test:
+  <<: *default
+  database: open-ruby-2019-now-food-clone_test
+
+production:
+  <<: *default
+  database: open-ruby-2019-now-food-clone_production
+  username: open-ruby-2019-now-food-clone
+  password: <%= ENV['OPEN-RUBY-2019-NOW-FOOD-CLONE_DATABASE_PASSWORD'] %>
