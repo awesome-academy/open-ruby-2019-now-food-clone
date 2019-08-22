@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_22_005945) do
+ActiveRecord::Schema.define(version: 2019_08_22_030049) do
 
   create_table "bill_details", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "bill_id"
@@ -72,7 +72,7 @@ ActiveRecord::Schema.define(version: 2019_08_22_005945) do
   create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "url"
     t.string "alt"
-    t.integer "type"
+    t.integer "image_type"
     t.string "imageable_type"
     t.bigint "imageable_id"
     t.index ["imageable_type", "imageable_id"], name: "index_images_on_imageable_type_and_imageable_id"

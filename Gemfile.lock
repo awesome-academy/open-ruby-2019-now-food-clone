@@ -118,6 +118,7 @@ GEM
       dry-logic (~> 1.0, >= 1.0.2)
     erubi (1.8.0)
     execjs (2.7.0)
+    ffaker (2.11.0)
     ffi (1.11.1)
     figaro (1.1.1)
       thor (~> 0.14)
@@ -248,6 +249,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   config
   devise
+  ffaker
   figaro
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
