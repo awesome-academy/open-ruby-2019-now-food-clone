@@ -1,2 +1,20 @@
 validate:
   VALID_EMAIL_REGEX: !ruby/regexp '/\A[^@\s]+@[^@\s]+\z/'
+account:
+  admin:
+    address: "Thôn Nội - Đức Thượng - Hoài Đức - Hà Nội"
+    email: "nguyenvanbay.ptit@gmail.com"
+    name: "Nguyễn Văn Bảy"
+    password: "111111"
+    phone: "0962199791"
+    role: "admin"
+  manager:
+    address: "Thôn Nội - Đức Thượng - Hoài Đức - Hà Nội"
+    email: "nguyenvantam.no1@gmail.com"
+    name: "Nguyễn Văn Tám"
+    password: "111111"
+    phone: "0962199791"
+    role: "manager"
+  user:
+    password: "111111"
+    role: "normal"
