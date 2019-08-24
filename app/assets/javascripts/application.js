@@ -1,4 +1,15 @@
+//= require jquery2
 //= require rails-ujs
 //= require activestorage
-//= require turbolinks
-//= require_tree .
+//= require popper
+//= require bootstrap-sprockets
+//= require easing.min.js
+//= require hoverIntent.js
+//= require superfish.min.js
+//= require jquery.magnific-popup.min.js
+//= require owl.carousel.min.js
+//= require jquery.sticky.js
+//= require jquery.nice-select.min.js
+//= require parallax.min.js
+//= require mail-script.js
+//= require main.js

@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>OpenRuby2019NowFoodClone</title>
+    <title></title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
-    <%= render "shim" %>
-    
+    <%= render "layouts/shim" %>
   </head>
-
   <body>
-    <%= yield %>
+    <%= render "layouts/header" %>
+    <%= render "layouts/banner" %>
+    <%= render "layouts/footer" %>
   </body>
 </html>

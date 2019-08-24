@@ -1,0 +1,25 @@
+<header id="header" id="home">
+  <div class="container">
+    <div class="row align-items-center justify-content-between d-flex">
+      <div id="logo">
+        <%= link_to do %>
+          <%= image_tag "logo.png" %>
+        <% end %>
+      </div>
+      <nav id="nav-menu-container">
+        <ul class="nav-menu">
+          <li class="menu-active">
+            <%= link_to t("home"), root_url %>
+          </li>
+          <li class="menu-has-children">
+            <%= link_to t(".language"), "#" %>
+            <ul>
+              <li><%= link_to t(".english"), locale:"en" %></li>
+              <li><%= link_to t(".vietnamese"), locale:"vi" %></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
