@@ -13,3 +13,10 @@ en:
       description: "Lorem ipsum dolor sit amet, consectetur adipisicing."
       contact: "Contact Us"
       phone: "0962199791"
+    admin:
+      slider:
+        dashboard: "Dashboard"
+      header:
+        placeholder_search: "Search &amp; enter"
+      footer:
+        description: "© 2019 Elegent Admin by wrappixel.com"
