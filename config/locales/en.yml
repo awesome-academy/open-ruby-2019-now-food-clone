@@ -1,1 +1,15 @@
 en:
+  layouts:
+    header:
+      language: "Languages"
+      english: "English"
+      vietnamese: "Vietnamese"
+    banner:
+      perfect_choise: "Perfect choice"
+      delicious_cheap: "Delicious and Cheap"
+      description: "Lorem ipsum dolor sit amet, consectetur adipisicing."
+      order: "Order products"
+    footer:
+      description: "Lorem ipsum dolor sit amet, consectetur adipisicing."
+      contact: "Contact Us"
+      phone: "0962199791"
