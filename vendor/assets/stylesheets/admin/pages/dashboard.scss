@@ -1,0 +1,24 @@
+@import '../variable';
+
+.o-income {
+  .c3 line,
+  .c3 path {
+    stroke: $border-color;
+  }
+}
+
+.news-slide {
+  .carousel-item {
+    min-height: 515px;
+    background: -moz-linear-gradient(top, $gray-900 50%, $gray-900 56%, $gray-900 100%);
+    background: -webkit-linear-gradient(top, $gray-900 50%, $gray-900 56%, $gray-900 100%);
+    background: linear-gradient(to bottom, $gray-900 50%, $gray-900 56%, $gray-900 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$white, endColorstr=$white, GradientType=0);
+  }
+
+  .carousel-caption {
+    text-align: left;
+    left: 25px;
+    right: 25px;
+  }
+}
