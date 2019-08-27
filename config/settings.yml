@@ -18,3 +18,8 @@ account:
   user:
     password: "111111"
     role: "normal"
+omniauth:
+  facebook: "facebook"
+user: 
+  min_password_length: 3
+  max_password_length: 128

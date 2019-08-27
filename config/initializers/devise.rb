@@ -14,4 +14,5 @@ Devise.setup do |config|
   config.reset_password_within = 1.hours
   config.sign_out_via = :delete
   config.scoped_views = true
+  config.omniauth :facebook, ENV["app_id"], ENV["app_secret"], callback_url: ENV["callback_url"]
 end
