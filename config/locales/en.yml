@@ -1,9 +1,15 @@
 en:
   layouts:
     header:
+      home: "Home"
       language: "Languages"
       english: "English"
       vietnamese: "Vietnamese"
+      login: "Login"
+      logout: "Logout"
+      home: "Home"
+      register: "Register"
+      edit: "Edit profile"
     banner:
       perfect_choise: "Perfect choice"
       delicious_cheap: "Delicious and Cheap"
@@ -13,6 +19,7 @@ en:
       description: "Lorem ipsum dolor sit amet, consectetur adipisicing."
       contact: "Contact Us"
       phone: "0962199791"
+      about: "About"
     admin:
       slider:
         dashboard: "Dashboard"
@@ -20,3 +27,43 @@ en:
         placeholder_search: "Search &amp; enter"
       footer:
         description: "© 2019 Elegent Admin by wrappixel.com"
+  devise:
+    shared:
+      links: 
+        login: "Login"
+        sign_up: "Register"
+        forgot_password: "Forgot password"
+    sessions:
+      new:
+        login: "Login"
+        current_password: "current password"
+        email: "Email"
+        password: "Password"
+        remember_me: "Remember me"
+    registrations:
+      edit:
+        edit: "Edit"
+        email: "Email"
+        waiting_confirmation: "Currently waiting confirmation for:"
+        password: "password"
+        new_password: "new-password"
+        not_change: "leave blank if you don't want to change it"
+        characters_minimum: "%{count} characters_minimum"
+        password_confirmation: "Password Confirmation"
+        current_password: "Current Password"
+        confirm_change: "we need your current password to confirm your changes"
+        current_password: "current-password"
+        update: "Update"
+        comfirm: "Are you sure?"
+        back: "Back"
+        current_password: "Current password"
+      new:
+        sign_up: "Sign up"
+        email: "Email"
+        name: "Name"
+        password: "Password"
+        password_confirmation: "Password Confirmation"
+        new_password: "new-password"
+        sign_up: "Sign up"
+        current_password: "current-password"
+        characters_minimum: "%{count} characters_minimum"

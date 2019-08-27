@@ -1,0 +1,122 @@
+@import 'variables';
+
+.container-login{
+  margin: 80px 50px;
+  height: 100%;
+  align-content: center;
+}
+
+ .card{
+height: 400px;
+margin-top: auto;
+margin-bottom: auto;
+width: 400px;
+background-color: $black_1 !important;
+}
+
+.login {
+  height: 350px;
+}
+
+.register {
+  height: 450px;
+}
+
+.edit_profile {
+  height: 520px;
+}
+
+ .social_icon span{
+font-size: 60px;
+margin-left: 10px;
+color: $warning;
+}
+
+ .social_icon span:hover{
+color: $primary-color;
+cursor: pointer;
+}
+
+ .card-header h3{
+color: $while_e;
+}
+
+ em {
+  color: $while_e;
+}
+
+ .social_icon{
+position: absolute;
+right: 20px;
+top: -45px;
+}
+
+ .input-group-prepend span{
+width: 50px;
+background-color: $warning;
+color: $black_1;
+border:0 !important;
+}
+
+ input:focus{
+outline: 0 0 0 0  !important;
+box-shadow: 0 0 0 0 !important;
+
+ }
+
+ .remember{
+  color: $while_e;
+  margin-left: 4px;
+}
+
+ .remember input
+{
+width: 20px;
+height: 20px;
+margin-left: 15px;
+margin-right: 5px;
+}
+
+ .login_btn{
+color: $black_1;
+background-color: $warning;
+width: 100px;
+}
+
+ .login_btn:hover{
+color: black;
+background-color: $while_e;
+}
+
+ .links{
+color: $while_e;
+}
+
+ .links a{
+margin-left: 4px;
+} 
+
+#error_explanation {
+  text-align: left;
+}
+
+#error_explanation li {
+  color: $primary-color;
+}
+
+#error_explanation h2 {
+  font-size: 14px;
+  color: $while_e;
+}
+
+.field_with_errors {
+  position: relative;
+  flex: 1 1 auto;
+  width: 1%;
+  margin-bottom: 0;
+  border-radius: 0px !important;
+}
+
+.card-header h2 {
+  color: $while_e;
+}
