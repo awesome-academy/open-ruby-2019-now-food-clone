@@ -5,9 +5,16 @@ class User < ApplicationRecord
     :recoverable, :rememberable, :validatable,
     :omniauthable, omniauth_providers: [:facebook]
 
-  has_many :stores
-  has_many :comments
-  has_many :bills
+  has_many :stores, dependent: :destroy
+  has_many :comments, dependent: :destroy
+  has_many :bills, dependent: :destroy
+
+  validates :address, presence: true, length:
+    {minimum: Settings.user.min_address_length, maximum: Settings.user.max_address_length}
+  validates :phone, presence: true, length:
+    {maximum: Settings.user.max_phone_length}
+  validates :name, presence: true, length:
+    {minimum: Settings.user.min_name_length, maximum: Settings.user.max_name_length}
 
   class << self
     def new_with_session params, session

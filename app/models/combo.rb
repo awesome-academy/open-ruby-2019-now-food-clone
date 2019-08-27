@@ -3,6 +3,6 @@ class Combo < ApplicationRecord
 
   belongs_to :store
   has_many :bill_details, as: :bill_detailable
-  has_many :comments, as: :commentable
-  has_many :combo_products
+  has_many :comments, as: :commentable, dependent: :destroy
+  has_many :combo_products, dependent: :destroy
 end

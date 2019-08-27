@@ -1,4 +1,11 @@
 en:
+  activerecord:
+    enums:
+      user:
+        roles:
+          admin: "Admin"
+          manager: "Manager"
+          normal: "Customer"
   layouts:
     header:
       home: "Home"
@@ -10,6 +17,7 @@ en:
       home: "Home"
       register: "Register"
       edit: "Edit profile"
+      admin: "Admin"
     banner:
       perfect_choise: "Perfect choice"
       delicious_cheap: "Delicious and Cheap"
@@ -23,8 +31,10 @@ en:
     admin:
       slider:
         dashboard: "Dashboard"
+        user: "User"
       header:
         placeholder_search: "Search &amp; enter"
+        home: "Home"
       footer:
         description: "© 2019 Elegent Admin by wrappixel.com"
   devise:
@@ -80,3 +90,21 @@ en:
         email: "Email"
         password: "Password"
         send_reset: "Send reset"
+  admin:
+    users:
+      index:
+        home: "Home"
+        new_user: "Create new user"
+        stt: "STT"
+        avata: "Avata"
+        email: "Email"
+        name: "Name"
+        role: "Role"
+      search:
+        name: "Name"
+        email: "Email"
+        role: "Role"
+        search_by_name_email: "Search by name and email"
+        search: "Search"
+      user:
+        sure: "Sure delete ?"

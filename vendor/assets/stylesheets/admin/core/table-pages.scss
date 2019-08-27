@@ -19,7 +19,12 @@ Table Cell
   width: 100%;
 }
 
-
+.border-search {
+  border: 2px solid $gray-300;
+  padding: 30px 20px 0px 20px;
+  margin: 21px 0px;
+  border-radius: 5px;
+}
 
 .cell {
   display: table-cell;

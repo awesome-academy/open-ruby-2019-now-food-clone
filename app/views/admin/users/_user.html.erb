@@ -1,0 +1,21 @@
+<tr>
+  <td><%= get_index_page user_counter %></td>
+  <td></td>
+  <td><%= user.email %></td>
+  <td>
+    <span class="label <%= "label-#{Settings.user.role.send(user.role)}" %>">
+      <%= enum_l user, :role %>
+    </span>
+  </td>
+  <td>
+    <%= link_to admin_user_path(user), class: "btn btn-info btn-sm" do %>
+      <i class="fa fa-eye"></i>
+    <% end %>
+    <%= link_to edit_admin_user_path(user), class: "btn btn-warning btn-sm" do %>
+      <i class="fa fa-edit"></i>
+    <% end %>
+    <%= link_to admin_user_path(user), method: :delete, data: {confirm: t(".sure")}, class: "btn btn-danger btn-sm" do %>
+      <i class="fa fa-trash"></i>
+    <% end %>
+  </td>
+</tr>
