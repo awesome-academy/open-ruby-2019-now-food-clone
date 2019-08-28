@@ -1,0 +1,10 @@
+<div class="card-body">
+  <center class="m-t-30">
+  <%= image_tag(user.image, width: 100, class: "img-circle") if user.image? %>
+    <h4 class="card-title m-t-10"><%= user.name %></h4>
+    <h6 class="card-subtitle m-t-10"><%= user.email %></h6>
+    <h6 class="card-subtitle m-t-10"><%= user.address %></h6>
+    <h6 class="card-subtitle m-t-10"><%= user.phone %></h6>
+    <h6 class="card-subtitle m-t-10"><%= enum_l user, :role %></h6>
+  </center>
+</div>
