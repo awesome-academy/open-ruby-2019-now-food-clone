@@ -1,5 +1,5 @@
 Devise.setup do |config|
-  config.mailer_sender = ENV["EMAIL"]
+  config.mailer_sender =  ENV["SENDMAIL_USERNAME"]
 
   require "devise/orm/active_record"
 

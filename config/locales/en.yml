@@ -67,3 +67,16 @@ en:
         sign_up: "Sign up"
         current_password: "current-password"
         characters_minimum: "%{count} characters_minimum"
+    passwords:
+      edit:
+        new_password: "new-password"
+        characters_minimum: "%{count} characters_minimum"
+        change_my_password: "Change my password"
+        change_your_password: "Change your password"
+        password: "password"
+        password_confirmation: "Password Confirmation"
+      new:
+        forgot_password: "Forgot your password?"
+        email: "Email"
+        password: "Password"
+        send_reset: "Send reset"
