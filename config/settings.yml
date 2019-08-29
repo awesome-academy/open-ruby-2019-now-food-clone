@@ -38,8 +38,14 @@ user:
     number_manager: 2
     number_normal: 0
 admin:
+  width_avata: 30
   user:
     num_in_page: 10
+    width_avata: 100 
+  combo:
+    num_in_page: 10
+manager:
+  width_avata: 30
 page:
   num_in_page: 10
   start: 1

@@ -1,5 +1,4 @@
 class Admin::HomesController < AdminController
-  def index
-    render :index
+  def index;
   end
 end

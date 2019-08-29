@@ -78,7 +78,6 @@ $(document).on('submit', '.edit_user', function(e) {
       if(data.errors) {
         show_errors(data.errors, '_edit');
       } else {
-        console.log(data);
         $('#email-' + data.success.id).html(data.success.email);
         $('.close_user').click();
         alert(I18n.t("users.edit.success"));
