@@ -16,6 +16,10 @@ class Admin::UsersController < AdminController
     respond_to :js
   end
 
+  def edit_user
+    respond_to :js
+  end
+
   def update
     if @user.update user_params
       render json: {success: @user}
