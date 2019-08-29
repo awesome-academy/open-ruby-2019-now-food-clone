@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  USER_PARAMS = %i(phone address name email password password_confirmation role).freeze
+
   enum role: {normal: 0, admin: 1, manager: 2}
   
   devise :database_authenticatable, :registerable,
@@ -17,16 +19,6 @@ class User < ApplicationRecord
     {minimum: Settings.user.min_name_length, maximum: Settings.user.max_name_length}
 
   class << self
-    def new_with_session params, session
-      tap do |user|
-        if data = session["devise.#facebook_data"] &&
-          session["devise.facebook_data"]["extra"]["raw_info"]
-          next unless user.email.blank?
-          user.email = data["email"]
-        end
-      end
-    end
-
     def from_omniauth auth
       where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
         user.email = auth.info.email

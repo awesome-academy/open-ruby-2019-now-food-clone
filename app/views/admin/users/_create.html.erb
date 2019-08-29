@@ -1,9 +1,16 @@
-<tr id="<%= "user-#{user.id}" %>" class="<%= "stt-#{user_counter}" %>">
-  <td><%= get_index_page user_counter %></td>
+<tr id="<%= "user-#{user.id}" %>" class="user-0">
+  <td>1</td>
   <td><%= image_tag user.image if user.image? %></td>
   <td id="<%= "email-#{user.id}" %>"><%= user.email %></td>
   <td>
-    <span class="label <%= "label-#{Settings.user.role.send(user.role)}" %>">
+    <span class="label
+      <%= if user.role.eql? "admin"
+        "label-danger"
+      elsif user.role.eql? "manager"
+        "label-warning"
+      else
+        "label-info"
+      end %> ">
       <%= enum_l user, :role %>
     </span>
   </td>
@@ -13,7 +20,7 @@
       <i class="fa fa-eye"></i>
     </button>
 
-    <button class="btn btn-warning btn-sm" onclick="edit_user('<%= user.id %>', '<%= user_counter %>');"
+    <button class="btn btn-warning btn-sm" onclick="edit_user('<%= user.id %>');"
       data-toggle="modal" data-target="#form_edit">
       <i class="fa fa-edit"></i>
     </button>

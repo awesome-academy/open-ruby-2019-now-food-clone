@@ -1,7 +1,10 @@
 <div class="container-fluid">
   <div class="row page-titles">
     <div class="col-md-5 align-self-center">
-      <%= link_to t(".new_user"), new_admin_user_path, class: "btn btn-sm btn-success" %>
+      <button class="btn btn-sm btn-success" id="form_new_user"
+        data-toggle="modal" data-target="#form_new">
+        <%=  t ".new_user" %>
+      </button>
     </div>
     <div class="col-md-7 align-self-center text-right">
       <div class="d-flex justify-content-end align-items-center">
@@ -31,7 +34,7 @@
                   <th></th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody id="table_users">
                 <%= render partial: :user, collection: @users %>
               </tbody>
             </table>
@@ -41,4 +44,58 @@
     </div>
   </div>
   <%= paginate @users, theme: Settings.theme.theme_config %>
+</div>
+
+<div class="modal fade" id="form_new" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title"><%= t ".new_user" %></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" id="show_new_user">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="close_user btn btn-secondary" data-dismiss="modal"><%= t ".close" %></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="form_edit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title"><%= t ".edit_user" %></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" id="show_edit_user">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="close_user btn btn-secondary" data-dismiss="modal"><%= t ".close" %></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="form_show" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title"><%= t ".show_user" %></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" id="show_show_user">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="close_user btn btn-secondary" data-dismiss="modal"><%= t ".close" %></button>
+      </div>
+    </div>
+  </div>
 </div>

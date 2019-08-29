@@ -31,6 +31,12 @@ user:
     admin: "danger"
     manager: "warning"
     normal: "info"
+    enum_admin: "admin"
+    enum_manager: "manager"
+    enum_normal: "mormal"
+    number_admin: 1
+    number_manager: 2
+    number_normal: 0
 admin:
   user:
     num_in_page: 10
