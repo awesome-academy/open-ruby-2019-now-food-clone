@@ -21,5 +21,21 @@ account:
 omniauth:
   facebook: "facebook"
 user: 
-  min_password_length: 3
-  max_password_length: 128
+  min_address_length: 3
+  max_address_length: 128
+  VALID_EMAIL_REGEX: !ruby/regexp '/\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i'
+  max_phone_length: 250
+  min_name_length: 1
+  max_name_length: 150
+  role:
+    admin: "danger"
+    manager: "warning"
+    normal: "info"
+admin:
+  user:
+    num_in_page: 10
+page:
+  num_in_page: 10
+  start: 1
+theme:
+  theme_config: "twitter-bootstrap-4"

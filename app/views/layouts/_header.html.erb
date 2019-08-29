@@ -15,6 +15,9 @@
             <li class="menu-has-children">
               <%= link_to current_user.name, "#" %>
               <ul>
+                <% if current_user.admin? %>
+                  <li><%= link_to t(".admin"), admin_home_path %></li>
+                <% end %>
                 <li><%= link_to t(".logout"), destroy_user_session_path, method: :delete %></li>
                 <% unless current_user.provider.eql? "facebook" %>
                   <li><%= link_to t(".edit"), edit_user_registration_path %></li>

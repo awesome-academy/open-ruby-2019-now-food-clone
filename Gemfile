@@ -22,6 +22,9 @@ gem "font-awesome-rails"
 gem "rails-i18n"
 gem "omniauth"
 gem "omniauth-facebook"
+gem "kaminari"
+gem "bootstrap4-kaminari-views"
+gem "ransack"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]

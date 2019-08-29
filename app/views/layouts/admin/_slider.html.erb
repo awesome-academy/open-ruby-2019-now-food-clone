@@ -6,7 +6,7 @@
     <%= link_to admin_home_path, class: "waves-effect waves-dark ml-auto hidden-sm-down" do %>
       <i class="ti-menu"></i>
     <% end %>
-    <%= link_to "#", class: "waves-effect waves-dark ml-auto hidden-sm-down" do %>
+    <%= link_to root_path, class: "waves-effect waves-dark ml-auto hidden-sm-down" do %>
       <i class="fa fa-home"></i>
     <% end %>
   </div>
@@ -18,6 +18,12 @@
           <%= link_to admin_home_path, class: "waves-effect waves-dark", "aria-expanded": "false" do %>
             <i class="fa fa-tachometer"></i>
             <span class="hide-menu"><%= t ".dashboard" %></span>
+          <% end %>
+        <li>
+        <li>
+          <%= link_to admin_users_path, class: "waves-effect waves-dark", "aria-expanded": "false" do %>
+            <i class="fa fa-user"></i>
+            <span class="hide-menu"><%= t ".user" %></span>
           <% end %>
         <li>
       </ul>

@@ -3,5 +3,5 @@ class Bill < ApplicationRecord
 
   belongs_to :user
   belongs_to :store
-  has_many :bill_details
+  has_many :bill_details, dependent: :destroy
 end
