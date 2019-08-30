@@ -19,6 +19,11 @@
             <i class="fa fa-tachometer"></i>
             <span class="hide-menu"><%= t ".dashboard" %></span>
           <% end %>
+
+          <%= link_to manager_combos_path, class: "waves-effect waves-dark", "aria-expanded": "false" do %>
+            <i class="fa fa-list-alt"></i>
+            <span class="hide-menu"><%= t ".combo" %></span>
+          <% end %>
         <li>
       </ul>
     </nav>

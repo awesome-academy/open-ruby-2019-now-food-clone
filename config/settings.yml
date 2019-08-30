@@ -20,7 +20,7 @@ account:
     role: "normal"
 omniauth:
   facebook: "facebook"
-user: 
+user:
   min_address_length: 3
   max_address_length: 128
   VALID_EMAIL_REGEX: !ruby/regexp '/\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i'
@@ -46,6 +46,8 @@ admin:
     num_in_page: 10
 manager:
   width_avata: 30
+  combo:
+    num_in_page: 10
 page:
   num_in_page: 10
   start: 1

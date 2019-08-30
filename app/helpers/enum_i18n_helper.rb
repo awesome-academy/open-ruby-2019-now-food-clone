@@ -4,7 +4,13 @@ module EnumI18nHelper
       [enum_i18n(class_name, enum, key), key]
     end
   end
-  
+
+  def enum_options_for_select_value class_name, enum
+    class_name.send(enum.to_s.pluralize).map do |key, value|
+      [enum_i18n(class_name, enum, key), value]
+    end
+  end
+
   def enum_l model, enum
     enum_i18n model.class, enum, model.send(enum)
   end

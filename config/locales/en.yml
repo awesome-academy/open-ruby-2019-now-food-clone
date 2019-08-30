@@ -6,6 +6,10 @@ en:
           admin: "Admin"
           manager: "Manager"
           normal: "Customer"
+      combo:
+        statuses:
+          active: "Active"
+          in_active: "In actice"
   shared:
     error_messages:
       error:
@@ -46,6 +50,7 @@ en:
     manager:
       slider:
         dashboard: "Dashboard"
+        combo: "Combo"
       header:
         placeholder_search: "Search &amp; enter"
         home: "home"
@@ -120,8 +125,6 @@ en:
       search:
         name: "Name"
         email: "Email"
-        role: "Role"
-        search_by_name_email: "Search by name and email"
         search: "Search"
       user:
         sure: "Sure delete ?"
@@ -144,3 +147,26 @@ en:
     edit:
       error: "Edit user fail"
       success: "Edit user success"
+  manager:
+    combos:
+      index:
+        home: "Home"
+        new_combo: "Create new combo"
+        stt: "STT"
+        thumbnail: "Thumbnail"
+        name: "Name"
+        price: "Price"
+        status: "Status"
+      search:
+        name: "Name"
+        price: "Price"
+        search: "Search"
+        price_from: "Price from"
+        price_to: "Price to"
+        status: "Status"
+        store: "Store"
+      combo:
+        sure: "Sure delete ?"
+      destroy:
+        success: "Delete success"
+        error: "Delete fail"
