@@ -1,9 +1,18 @@
+function edit_user(id) {
+  $.ajax({
+    url: '/admin/edit_user',
+    type: 'get',
+    dataType: 'script',
+    data: {'id': id}
+  });
+}
+
 function show_user(id) {
   $.ajax({
     url: '/admin/show_user',
     type: 'get',
     dataType: 'script',
-    data: {'id' : id}
+    data: {'id': id}
   });
 }
 
@@ -28,8 +37,7 @@ $(document).on('click', '#form_new_user', function() {
   $.ajax({
     url: '/admin/new_user',
     type: 'get',
-    dataType: 'script',
-    data: {}
+    dataType: 'script'
   });
 });
 
@@ -51,6 +59,28 @@ $(document).on('submit', '.new_user', function(e) {
         $('#table_users').prepend(data.success);
         $('.close_user').click();
         alert(I18n.t("users.add.success"));
+      }
+    }
+  });
+});
+
+$(document).on('submit', '.edit_user', function(e) {
+
+  e.preventDefault();
+  form = $('.edit_user');
+
+  $.ajax({
+    type: form.attr('method'),
+    url: form.attr('action'),
+    data: form.serialize(),
+    success: function (data) {
+      reset_errors('_edit');
+      if(data.errors) {
+        show_errors(data.errors, '_edit');
+      } else {
+        $('#email-' + data.success.id).html(data.success.email);
+        $('.close_user').click();
+        alert(I18n.t("users.edit.success"));
       }
     }
   });

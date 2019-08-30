@@ -23,6 +23,7 @@ en:
       register: "Register"
       edit: "Edit profile"
       admin: "Admin"
+      manager: "Manager"
     banner:
       perfect_choise: "Perfect choice"
       delicious_cheap: "Delicious and Cheap"
@@ -39,7 +40,15 @@ en:
         user: "User"
       header:
         placeholder_search: "Search &amp; enter"
-        home: "Home"
+        home: "home"
+      footer:
+        description: "© 2019 Elegent Admin by wrappixel.com"
+    manager:
+      slider:
+        dashboard: "Dashboard"
+      header:
+        placeholder_search: "Search &amp; enter"
+        home: "home"
       footer:
         description: "© 2019 Elegent Admin by wrappixel.com"
   devise:

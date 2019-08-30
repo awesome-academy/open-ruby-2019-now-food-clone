@@ -11,4 +11,9 @@ Rails.application.routes.draw do
 
     resources :users
   end
+
+  scope module: "manager", path: "manager", as: "manager" do
+    get "/home", to: "homes#index"
+    resources :combos
+  end
 end

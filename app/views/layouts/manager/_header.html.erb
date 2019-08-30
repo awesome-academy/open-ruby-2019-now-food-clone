@@ -21,7 +21,7 @@
           <%= form_with url: "#", method: "get", class: "app-search" do %>
             <%= text_field_tag :search, "",  class: "form-control", placeholder: t(".placeholder_search") %>
             <a class="srh-btn"><i
-                class="fa fa-times"></i></a>
+                class="fa fa-book-reader"></i></a>
           <% end %>
         </li>
       </ul>
@@ -30,7 +30,7 @@
         <li class="nav-item dropdown">
           <%= link_to "#", class: "nav-link dropdown-toggle text-muted waves-effect waves-dark",
 "data-toggle": "dropdown", "aria-haspopup": "true", "aria-expanded": "false" do %>
-            <%= image_tag "avata.png", alt: "user", class: "img-circle", width: Settings.admin.width_avata %>
+            <%= image_tag "avata.png", alt: "user", class: "img-circle", Settings.manager.width_avata %>
           <% end %>
         </li>
       </ul>
