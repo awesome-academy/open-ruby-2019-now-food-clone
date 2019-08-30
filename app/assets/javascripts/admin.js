@@ -3,7 +3,12 @@
 //= require activestorage
 //= require popper
 //= require bootstrap-sprockets
+//= require turbolinks
 //= require admin/custom.min.js
 //= require admin/perfect-scrollbar.jquery.min.js
 //= require admin/sidebarmenu.js
 //= require admin/waves.js
+//= require admin/custom.js
+//= require i18n
+//= require i18n.js
+//= require i18n/translations

@@ -26,6 +26,10 @@ Table Cell
   border-radius: 5px;
 }
 
+.modal-dialog {
+  max-width: 80%;
+}
+
 .cell {
   display: table-cell;
   vertical-align: middle;

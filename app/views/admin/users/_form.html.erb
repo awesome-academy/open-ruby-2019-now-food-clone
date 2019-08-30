@@ -1,0 +1,47 @@
+<%= form_for [:admin, @user], class: "form-group" do |f| %>
+  <%= f.hidden_field(:role, value: Settings.user.role.enum_manager) if @user %>
+  <%= render "shared/error_messages", object: f.object %>
+  <div class="row">
+    <div class="col">
+      <%= f.label t(".name") %>
+      <%= f.text_field :name, class: "form-control mb-1" %>
+      <div class="my_error mb-2" id="error_name_<%= type %>"></div>
+    </div>
+    <div class="col">
+      <%= f.label t(".address") %>
+      <%= f.text_field :address, class: "form-control mb-1" %>
+      <div class="my_error mb-2" id="error_address_<%= type %>"></div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <%= f.label t(".phone") %>
+      <%= f.text_field :phone, class: "form-control mb-1" %>
+      <div class="my_error mb-2" id="error_phone_<%= type %>"></div>
+    </div>
+    <div class="col">
+      <%= f.label t(".email") %>
+      <%= f.text_field :email, class: "form-control mb-1" %>
+      <div class="my_error mb-2" id="error_email_<%= type %>"></div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <%= f.label t(".password") %>
+      <%= f.password_field :password, class: "form-control mb-1" %>
+      <div class="my_error mb-2" id="error_password_<%= type %>"></div>
+    </div>
+    <div class="col">
+      <%= f.label t(".password_confirmation"), t(".password_confirmation") %>
+      <%= f.password_field :password_confirmation, class: "form-control mb-1" %>
+      <div class="my_error mb-2" id="error_password_confirmation_<%= type %>"></div>
+    </div>
+  </div>
+
+  <%= f.submit t(".submit"), class: "btn btn-primary btn-sm mt-3", data: {disable_with: false} %>
+  <%= button_tag t(".reset"), type: :reset,
+    class: "btn btn-warning btn-sm mr-2 mt-3" %>
+  </div>
+<% end %>

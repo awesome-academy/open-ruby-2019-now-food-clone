@@ -5,6 +5,9 @@ Rails.application.routes.draw do
 
   scope module: "admin", path: "admin", as: "admin" do
     get "/home", to: "homes#index"
+    get "/new_user", to: "users#new_user"
+    get "/edit_user", to: "users#edit_user"
+    get "/show_user", to: "users#show_user"
 
     resources :users
   end

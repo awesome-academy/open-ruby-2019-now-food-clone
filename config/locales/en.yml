@@ -6,6 +6,11 @@ en:
           admin: "Admin"
           manager: "Manager"
           normal: "Customer"
+  shared:
+    error_messages:
+      error:
+        one: "1 error"
+        other: "%{count} errors"
   layouts:
     header:
       home: "Home"
@@ -100,6 +105,9 @@ en:
         email: "Email"
         name: "Name"
         role: "Role"
+        close: "Close"
+        edit_user: "Edit user"
+        show_user: "Showr user"
       search:
         name: "Name"
         email: "Email"
@@ -108,3 +116,22 @@ en:
         search: "Search"
       user:
         sure: "Sure delete ?"
+      form:
+        name: "Name"
+        address: "Address"
+        phone: "Phone"
+        email: "Email"
+        password: "Password"
+        password_confirmation: "Password confirmation"
+        submit: "Submit"
+        reset: "Reset"
+      destroy:
+        success: "Delete success"
+        error: "Delete fail"
+  users:
+    add:
+      error: "Add user fail"
+      success: "Add user success"
+    edit:
+      error: "Edit user fail"
+      success: "Edit user success"
