@@ -170,3 +170,16 @@ en:
       destroy:
         success: "Delete success"
         error: "Delete fail"
+      create:
+        success: "Create success"
+        error: "Create fail"
+      new:
+        new_combo: "New combo"
+      form:
+        name: "Name"
+        price: "Price"
+        store: "Store"
+        list_product: "List product"
+        add_product: "Add product"
+        submit: "Submit"
+        reset: "Reset"

@@ -85,5 +85,5 @@ $(document).on('submit', '.edit_user', function(e) {
 });
 
 $(document).ready(function() {
-  $('#id_label_single').select2({theme: 'bootstrap'})
+  $('#id_label_single, .add_product_to_combo_product').select2({theme: 'bootstrap'})
 });

@@ -11,6 +11,7 @@ class User < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :bills, dependent: :destroy
   has_many :combos, through: :stores
+  has_many :products, through: :stores
 
   validates :address, presence: true, length:
     {minimum: Settings.user.min_address_length, maximum: Settings.user.max_address_length}

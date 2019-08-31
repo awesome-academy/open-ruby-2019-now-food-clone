@@ -1,0 +1,54 @@
+<%= form_for [:manager, @combo], class: "form-group" do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+  
+  <div class="row">
+    <div class="col">
+      <%= f.label t(".name") %>
+      <%= f.text_field :name, class: "form-control mb-1" %>
+      <div class="my_error">
+        <% @combo.errors[:name].each do |error| %>
+          <p><%= error %></p>
+        <% end %>
+      </div>
+    </div>
+    <div class="col">
+      <%= f.label t(".price") %>
+      <%= f.text_field :price, class: "form-control mb-1" %>
+      <div class="my_error">
+        <% @combo.errors[:price].each do |error| %>
+          <p><%= error %></p>
+        <% end %>
+      </div>
+    </div>
+    <div class="col">
+      <%= f.label t(".store") %>
+      <%= f.select :store_id, options_for_select(get_stores,
+        selected: f.object.store_id),
+        {include_blank: false}, {class: "js-example-basic-single js-states
+        form-control",id: "id_label_single"} %>
+      <div class="my_error">
+        <% @combo.errors[:store_id].each do |error| %>
+          <p><%= error %></p>
+        <% end %>
+      </div>
+    </div>
+  </div><hr>
+
+  <div>
+    <strong><%= t ".list_product" %></strong>
+  </div>
+
+  <div id="tasks">
+    <%= f.fields_for :combo_products do |combo_product| %>
+      <%= render "combo_product_fields", {f: combo_product} %>
+    <% end %>
+    <div class="links">
+      <%= link_to_add_association t(".add_product"), f, :combo_products,
+        class: "btn btn-success btn-sm mt-3" %>
+      <%= f.submit t(".submit"), class: "btn btn-primary btn-sm mt-3",
+        data: {disable_with: false} %>
+      <%= button_tag t(".reset"), type: :reset,
+        class: "btn btn-warning btn-sm mr-2 mt-3" %>
+    </div>
+  </div>
+<% end %>

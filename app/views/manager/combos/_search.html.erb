@@ -23,16 +23,18 @@
         <div class="form-group">
           <%= f.label t(".status") %>
           <%= f.select :status_eq,
-            options_for_select(enum_options_for_select_value(Combo, :status)),
-            {include_blank: ""}, {class: "form-control"} %>
+            options_for_select(enum_options_for_select_value(Combo, :status),
+            selected: f.object.status_eq),
+            {include_blank: false}, {class: "form-control"} %>
         </div>
       </div>
 
       <div class="col-4">
         <div class="form-group">
           <%= f.label t(".store") %>
-          <%= f.select :store_id_eq, options_for_select(get_stores),
-            {include_blank: ""}, {class: "js-example-basic-single js-states
+          <%= f.select :store_id_eq, options_for_select(get_stores,
+            selected: f.object.store_id_eq),
+            {include_blank: false}, {class: "js-example-basic-single js-states
             form-control",id: "id_label_single"} %>
         </div>
       </div>

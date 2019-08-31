@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_27_060536) do
+ActiveRecord::Schema.define(version: 2019_08_31_013225) do
 
   create_table "bill_details", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "bill_id"
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 2019_08_27_060536) do
   create_table "combo_products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "product_id"
     t.bigint "combo_id"
+    t.integer "count"
     t.index ["combo_id"], name: "index_combo_products_on_combo_id"
     t.index ["product_id"], name: "index_combo_products_on_product_id"
   end

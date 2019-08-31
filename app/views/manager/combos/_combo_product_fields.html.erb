@@ -1,0 +1,19 @@
+<div class="nested-fields">
+  <div class="field">
+    <div class="row">
+      <div class="col-6">
+        <%= f.select :product_id,
+          options_for_select(get_products, selected: f.object.product_id),
+          {include_blank: false},
+          {class: "form-control add_product_to_combo_product"} %>
+      </div>
+      <div class="col-4">
+        <%= f.number_field :count, class: "form-control" %>
+      </div>
+      <div class="col-2">
+        <%= link_to_remove_association t(".delete_product"), f,
+          class: "btn btn-danger btn-sm" %>
+      </div>
+    </div>
+  </div>
+</div>
