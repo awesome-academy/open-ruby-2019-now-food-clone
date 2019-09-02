@@ -1,6 +1,5 @@
 class Manager::CombosController < ManagerController
-  before_action :load_combo, only: %i(destroy)
-  before_action :is_manager
+  before_action :load_combo, only: %i(edit update destroy)
 
   def index
     @search = Combo.ransack params[:search]
@@ -13,10 +12,21 @@ class Manager::CombosController < ManagerController
     @combo = Combo.new
   end
 
+  def edit; end
+
   def create
     @combo = Combo.new combo_params
 
     if @combo.save
+      flash[:success] = t(".success")
+      redirect_to manager_combos_path
+    else
+      render :new
+    end
+  end
+
+  def update
+    if @combo.update_attributes combo_params
       flash[:success] = t(".success")
       redirect_to manager_combos_path
     else
@@ -49,9 +59,5 @@ class Manager::CombosController < ManagerController
     return if @combo
     flash[:danger] = t(".not_exits")
     redirect_to root_path
-  end
-
-  def is_manager
-    redirect_to root_path unless current_user.manager?
   end
 end
