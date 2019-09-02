@@ -50,6 +50,8 @@ manager:
   width_avata: 30
   combo:
     num_in_page: 10
+  store:
+    num_in_page: 10
 page:
   num_in_page: 10
   start: 1

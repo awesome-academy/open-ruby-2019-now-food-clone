@@ -14,8 +14,10 @@ Rails.application.routes.draw do
 
   scope module: "manager", path: "manager", as: "manager" do
     get "/home", to: "homes#index"
-    
+
     resources :combos
     resources :comments, only: [:create, :destroy]
+    resources :stores
+    resources :districts, only: [:index]
   end
 end
