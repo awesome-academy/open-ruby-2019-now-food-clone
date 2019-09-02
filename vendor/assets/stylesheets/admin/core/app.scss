@@ -48,7 +48,7 @@
     }
 
     .breadcrumb-item+.breadcrumb-item::before {
-      content: "\e649";
+      content: ">";
       font-family: themify;
       color: $gray-400;
       font-size: 11px;

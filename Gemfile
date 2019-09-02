@@ -26,6 +26,7 @@ gem "kaminari"
 gem "bootstrap4-kaminari-views"
 gem "ransack"
 gem "i18n-js"
+gem "select2-rails"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]

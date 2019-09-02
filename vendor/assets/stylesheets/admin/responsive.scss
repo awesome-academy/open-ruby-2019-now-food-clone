@@ -26,6 +26,16 @@
   margin-left: 2%;
 }
 
+.border-search {
+  label {
+    margin-bottom: 0px !important;
+  }
+
+  .form-group {
+    margin-bottom: 10px !important;
+  }
+}
+
 @media(max-width:1023px) {
   .inbox-center a {
     width: 200px;

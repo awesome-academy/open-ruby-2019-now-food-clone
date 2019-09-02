@@ -42,7 +42,6 @@ $(document).on('click', '#form_new_user', function() {
 });
 
 $(document).on('submit', '.new_user', function(e) {
-  
   e.preventDefault();
   form = $('.new_user');
 
@@ -65,7 +64,6 @@ $(document).on('submit', '.new_user', function(e) {
 });
 
 $(document).on('submit', '.edit_user', function(e) {
-
   e.preventDefault();
   form = $('.edit_user');
 
@@ -84,4 +82,8 @@ $(document).on('submit', '.edit_user', function(e) {
       }
     }
   });
+});
+
+$(document).ready(function() {
+  $('#id_label_single').select2({theme: 'bootstrap'})
 });
