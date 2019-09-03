@@ -53,3 +53,6 @@ page:
   start: 1
 theme:
   theme_config: "twitter-bootstrap-4"
+combo:
+  max_name_length: 128
+  min_name_length: 3

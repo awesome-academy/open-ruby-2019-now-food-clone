@@ -8,7 +8,22 @@ class Manager::CombosController < ManagerController
       .combo_of_current_user(combo_id_current_user)
       .per Settings.manager.combo.num_in_page
   end
-  
+
+  def new
+    @combo = Combo.new
+  end
+
+  def create
+    @combo = Combo.new combo_params
+
+    if @combo.save
+      flash[:success] = t(".success")
+      redirect_to manager_combos_path
+    else
+      render :new
+    end
+  end
+
   def destroy
     if @combo.destroy
       flash[:success] = t(".success")
@@ -24,6 +39,10 @@ class Manager::CombosController < ManagerController
     current_user.combos.pluck :id
   end
 
+  def combo_params
+    params.require(:combo).permit Combo::COMBO_PARAMS
+  end
+  
   def load_combo
     @combo = Combo.find_by_id params[:id]
 
