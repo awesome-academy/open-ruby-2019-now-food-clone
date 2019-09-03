@@ -1,0 +1,15 @@
+<li  id="comment-<%= comment.id %>">
+  <div class="comment-show">
+    <h6><%= comment.content %></h6>
+    <span>
+      <%= link_to [:manager, comment], method: :delete,
+        data: {confirm: t(".sure")}, remote: true do %>
+        <i class="fa fa-trash"></i>
+      <% end %>
+    </span>
+  </div>
+  <span class="time">
+    <%= comment.created_at %>
+  </span>
+<li>
+<hr>

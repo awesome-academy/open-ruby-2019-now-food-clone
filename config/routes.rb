@@ -16,5 +16,6 @@ Rails.application.routes.draw do
     get "/home", to: "homes#index"
     
     resources :combos
+    resources :comments, only: [:create, :destroy]
   end
 end

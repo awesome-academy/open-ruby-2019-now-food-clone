@@ -5,9 +5,9 @@
   <td><%= combo.price %></td>
   <td><%= combo.status %></td>
   <td>
-    <button class="btn btn-info btn-sm">
+    <%= link_to manager_combo_path(combo), class: "btn btn-info btn-sm" do %>
       <i class="fa fa-eye"></i>
-    </button>
+    <% end %>
 
     <%= link_to edit_manager_combo_path(combo), class: "btn btn-warning btn-sm" do %>
       <i class="fa fa-edit"></i>

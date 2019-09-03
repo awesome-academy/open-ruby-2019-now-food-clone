@@ -1,0 +1,42 @@
+<tr id="#comment-<%= comment.id %>">
+  <th><%= comment_counter + Settings.step %></th>
+  <th><%= comment.user.name %></th>
+  <th><%= comment.created_at %></th>
+  <th class="w-50" id="sub-comment">
+    <div class="card">
+      <div class="card-body">
+        <ul class="comment" id="reply_comment">
+          <li id="comment-<%= comment.id %>">
+          <div class="comment-show">
+            <h4><i class="fa fa-comment"></i> <%= comment.content %></h4>
+          </div>
+          <span class="time">
+            <%= comment.created_at %>
+          </span>
+          <hr>
+        <li>
+          <% get_sub_comment(comment).each do |sub_comment| %>  
+            <li class="w-40" id="comment-<%= sub_comment.id %>">
+              <div class="comment-show">
+                <h6><i class="fa fa-reply-all"></i> <%= sub_comment.content %></h6>
+                <span>
+                  <%= link_to [:manager, sub_comment], method: :delete,
+                    data: {confirm: t(".sure")}, remote: true do %>
+                    <i class="fa fa-trash"></i>
+                  <% end %>
+                </span>
+              </div>
+              <span class="time">
+                <%= l sub_comment.created_at, format: :date_month_year %>
+              </span>
+              <hr>
+            <li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </th>
+  <th>
+    <%= render "form_reply" %>
+  </th>
+</tr>
