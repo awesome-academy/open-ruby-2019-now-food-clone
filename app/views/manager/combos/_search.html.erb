@@ -29,7 +29,7 @@
         </div>
       </div>
 
-      <div class="col-4">
+      <div class="col-4 mt-2">
         <div class="form-group">
           <%= f.label t(".store") %>
           <%= f.select :store_id_eq, options_for_select(get_stores,
@@ -38,7 +38,7 @@
             form-control",id: "id_label_single"} %>
         </div>
       </div>
-      
+
       <div class="col-12">
         <%= f.submit t(".search"), class: "btn btn-success btn-sm mb-2 pt-0" %>
       </div>

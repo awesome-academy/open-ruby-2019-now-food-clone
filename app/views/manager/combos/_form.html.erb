@@ -1,6 +1,5 @@
 <%= form_for [:manager, @combo], class: "form-group" do |f| %>
   <%= render "shared/error_messages", object: f.object %>
-  
   <div class="row">
     <div class="col">
       <%= f.label t(".name") %>
@@ -31,6 +30,16 @@
           <p><%= error %></p>
         <% end %>
       </div>
+    </div>
+  </div>
+  
+  <div id="tasks">
+    <%= f.fields_for :images do |image| %>
+      <%= render "image_fields", {f: image} %>
+    <% end %>
+    <div class="links">
+      <%= link_to_add_association t(".add_image"), f, :images,
+        class: "btn btn-success btn-sm mt-3" %>
     </div>
   </div><hr>
 

@@ -1,0 +1,30 @@
+<div class="card">
+  <div class="card-body">
+    <div id="<%= id %>" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <% images.each_with_index do |image, key| %>
+          <li data-target="#<%= "image-#{id}" %>" data-slide-to="<%= key %>"
+            class="<%= "active" if key == 0 %>"></li>
+        <% end %>
+      </ol>
+      <div class="carousel-inner">
+        <% images.each_with_index do |image, key| %>
+          <div class="carousel-item <%= "active" if key == 0 %>">
+            <%= image_tag "#{image.url}", class: "size_combo img-responsive" %>
+            <div class="carousel-caption d-none d-md-block">
+              <h5><%= image.alt %></h5>
+            </div>
+          </div>
+        <% end %>
+      </div>
+      <a class="carousel-control-prev" href="#<%= id %>" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only"><%= t ".previous" %></span>
+      </a>
+      <a class="carousel-control-next" href="#<%= id %>" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only"><%= t ".next" %></span>
+      </a>
+    </div>
+  </div>
+</div>

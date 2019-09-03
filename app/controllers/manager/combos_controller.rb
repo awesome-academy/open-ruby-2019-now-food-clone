@@ -1,11 +1,17 @@
 class Manager::CombosController < ManagerController
-  before_action :load_combo, only: %i(edit update destroy)
+  before_action :load_combo, except: %i(index new create)
+  before_action :load_products, only: %i(show)
+  before_action :load_parent_comments, only: %i(show)
 
   def index
     @search = Combo.ransack params[:search]
     @combos = @search.result.page(params[:page])
       .combo_of_current_user(combo_id_current_user)
       .per Settings.manager.combo.num_in_page
+  end
+
+  def show
+    @comment = Comment.new
   end
 
   def new
@@ -59,5 +65,13 @@ class Manager::CombosController < ManagerController
     return if @combo
     flash[:danger] = t(".not_exits")
     redirect_to root_path
+  end
+
+  def load_products
+    @products = @combo.products
+  end
+
+  def load_parent_comments
+    @parent_comments = @combo.comments.parent_comment
   end
 end

@@ -1,0 +1,7 @@
+<% if @comment.errors.present? %>
+  alert('<%= t ".fail" %>');
+<% else %>
+  alert('<%= t ".success" %>');
+  $('#reply_comment').append('<%= j render "comment", comment: @comment %>');
+  $('#content_comment').val('');
+<% end %>

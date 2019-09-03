@@ -44,6 +44,27 @@
   color: red;
 }
 
+.comment-show {
+  display: flex;
+}
+
+.comment-show h6 {
+  justify-items: left;
+  width: 90%;
+}
+
+.comment span {
+  font-size: 12px;
+}
+
+.comment-show a {
+  justify-items: right
+}
+
+.comment {
+  list-style-type: none;
+}
+
 @media(max-width:1023px) {
   .inbox-center a {
     width: 200px;
@@ -56,6 +77,11 @@
       display: flex !important;
     }
   }
+}
+
+.size_combo {
+  width: 180px;
+  height: 180px;
 }
 
 @media(min-width:768px) {

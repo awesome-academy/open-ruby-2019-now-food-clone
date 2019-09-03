@@ -27,6 +27,8 @@ user:
   max_phone_length: 250
   min_name_length: 1
   max_name_length: 150
+  min_password_length: 3
+  max_password_length: 250
   role:
     admin: "danger"
     manager: "warning"
@@ -56,3 +58,11 @@ theme:
 combo:
   max_name_length: 128
   min_name_length: 3
+upload:
+  dir: "uploads"
+  image:
+    default: "default.png"
+  width: 200
+  height: 200
+step: 1
+zero: 0

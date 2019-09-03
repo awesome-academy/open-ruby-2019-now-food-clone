@@ -10,6 +10,10 @@ en:
         statuses:
           active: "Active"
           in_active: "In actice"
+      image:
+        image_types:
+          image: "Image"
+          thumbnail: "Thumbnail"
   shared:
     error_messages:
       error:
@@ -148,7 +152,42 @@ en:
       error: "Edit user fail"
       success: "Edit user success"
   manager:
+    comments:
+      create:
+        fail: "Create comment fail"
+        success: "Create comment success"
+      load_comment:
+        not_exits: "Comment not exit"
+      comment:
+        sure: "Sure delete ?"
+      destroy:
+        fail: "Destroy comment fail"
+        success: "Destroy comment success"
     combos:
+      show:
+        thumbnails: "Thumbnails"
+        images: "Images"
+        stt: "STT"
+        name: "Name"
+        count: "Count"
+        price: "Price"
+        product_of_combo: "Product of combo"
+        comment: "Comment"
+        content_and_reply: "Comtent and reply"
+        reply: "Reply"
+        comment_by: "Comment by"
+        created_at: "Created at"
+      form_reply:
+        sure: "Sure delete ?"
+      image_show:
+        previous: "Previous"
+        next: "Next"
+      comment:
+        sure: "Sure delete ?"
+      combo_product_fields:
+        delete_product: "Delete prouct"
+      load_combo:
+        not_exits: "Combo not exit"
       index:
         home: "Home"
         new_combo: "Create new combo"
@@ -173,6 +212,8 @@ en:
       create:
         success: "Create success"
         error: "Create fail"
+      update:
+        success: "Update success"
       new:
         new_combo: "New combo"
       form:
@@ -183,3 +224,10 @@ en:
         add_product: "Add product"
         submit: "Submit"
         reset: "Reset"
+      combo_product_fields:
+        delete_product: "Delete product"
+      image_fields:
+        delete_image: "Delete images"
+  time:
+    formats:
+      date_month_year: "%H:%M:%S - %d-%m-%Y"

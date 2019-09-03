@@ -1,0 +1,15 @@
+<%= form_for [:manager, @comment],
+  class: "form-group", remote: true do |f| %>
+  <%= f.text_area :content, class: "form-control", id: "content_comment" %>
+  <%= f.hidden_field :user_id, value: current_user.id %>
+  <%= f.hidden_field :parent_comment_id, value: @comment.id %>
+  <%= f.hidden_field :commentable_type, value: Combo.name %>
+  <%= f.hidden_field :commentable_id, value: @combo.id %>
+  <%= button_tag type: :submit, class: "btn btn-success btn-sm" do %>
+    <i class="fa fa-reply-all"></i>
+  <% end %>
+  <%= link_to [:manager, @comment], method: :delete, class: "btn btn-danger btn-sm",
+    data: {confirm: t(".sure")}, remote: true do %>
+    <i class="fa fa-trash"></i>
+  <% end %>
+<% end %>
