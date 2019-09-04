@@ -12,19 +12,20 @@
             <i class="ti-menu"></i>
           <% end %>
         </li>
-        
-        <li class="nav-item search-box">
-          <%= link_to "", class: "nav-link waves-effect waves-dark" do %>
-            <i class="fa fa-search"></i>
-          <% end %>
-
-          <%= form_with url: "#", method: "get", class: "app-search" do %>
-            <%= text_field_tag :search, "",  class: "form-control", placeholder: t(".placeholder_search") %>
-            <a class="srh-btn"><i
-                class="fa fa-book-reader"></i></a>
-          <% end %>
-        </li>
       </ul>
+
+      <div class="dropdown">
+        <button class="btn btn-sm btn-warning dropdown-toggle" type="button" id="dropdown_store"
+          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <%= t ".store_manager" %>
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdown_store">
+          <%= link_to "#", class: "dropdown-item", "data-toggle": "modal",
+            "data-target": "#show_store", id: "get_store" do %>
+            <%= t ".show_store" %>
+          <% end %>
+        </div>
+      </div>
 
       <ul class="navbar-nav my-lg-0">
         <li class="nav-item dropdown">
@@ -37,3 +38,24 @@
     </div>
   </nav>
 </header>
+
+<div class="modal fade" id="show_store" tabindex="-1" role="dialog" aria-labelledby="show_storeTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="show_storeTitle"><%= t ".store_manager" %></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" id="list_store">
+      </div>
+
+      <div id="store_form"></div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary close_store" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

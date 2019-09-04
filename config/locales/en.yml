@@ -58,6 +58,8 @@ en:
       header:
         placeholder_search: "Search &amp; enter"
         home: "home"
+        store_manager: "Store manager"
+        show_store: "Show store"
       footer:
         description: "© 2019 Elegent Admin by wrappixel.com"
   devise:
@@ -151,11 +153,41 @@ en:
     edit:
       error: "Edit user fail"
       success: "Edit user success"
+  stores:
+    add:
+      error: "Add store fail"
+      success: "Add store success"
+    edit:
+      error: "Edit store fail"
+      success: "Edit store success"
   manager:
+    districts:
+      districts:
+        districts: "Districts"
+    stores:
+      store:
+        sure: "Sure delete ?"
+      edit:
+        edit_store: "Edit store"
+      form:
+        address: "Address"
+        phone: "Phone"
+        provinces: "Provinces"
+        districts: "Districts"
+        submit: "Submit"
+        reset: "Reset"
+      index:
+        stt: "STT"
+        phone: "Phone"
+        address: "Address"
+        add_store: "Add store"
+      new:
+        new_store: "New store"
+      destroy:
+        success: "Success"
+      load_store:
+        not_exits: "Store not exit"
     comments:
-      create:
-        fail: "Create comment fail"
-        success: "Create comment success"
       load_comment:
         not_exits: "Comment not exit"
       comment:

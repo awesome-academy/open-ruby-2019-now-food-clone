@@ -16,12 +16,9 @@ function show_user(id) {
   });
 }
 
-function reset_errors(type) {
-  var field = ['name', 'email', 'address',
-    'phone', 'password', 'password_confirmation'];
-  $.each(field, function (value) {
-    $('#error_' + value + type).html('');
-  });
+function reset_errors() {
+  $('#error_name', '#error_address', '#error_district_id', '#error_email',
+    '#error_password', '#error_password_confirmation').html('');
 }
 
 function show_errors(errors, type) {
@@ -50,7 +47,8 @@ $(document).on('submit', '.new_user', function(e) {
     url: form.attr('action'),
     data: form.serialize(),
     success: function (data) {
-      reset_errors('_new');
+      reset_errors();
+      
       if(data.errors) {
         show_errors(data.errors, '_new');
       } else {
@@ -72,7 +70,8 @@ $(document).on('submit', '.edit_user', function(e) {
     url: form.attr('action'),
     data: form.serialize(),
     success: function (data) {
-      reset_errors('_edit');
+      reset_errors();
+      
       if(data.errors) {
         show_errors(data.errors, '_edit');
       } else {
@@ -86,4 +85,77 @@ $(document).on('submit', '.edit_user', function(e) {
 
 $(document).ready(function() {
   $('#id_label_single, .add_product_to_combo_product').select2({theme: 'bootstrap'})
+});
+
+$(document).on('click', '#get_store', function() {
+  $.ajax({
+    url: '/manager/stores',
+    type: 'get',
+    dataType: 'script'
+  });
+});
+
+$(document).on('change', '#provinces', function() {
+  var province_id = $('#provinces').val();
+
+  $.ajax({
+    url: '/manager/districts',
+    type: 'get',
+    dataType: 'script',
+    data: {'id': province_id}
+  });
+});
+
+$(document).on('submit', '.edit_store', function(e) {
+  e.preventDefault();
+  form = $('.edit_store');
+
+  $.ajax({
+    type: form.attr('method'),
+    url: form.attr('action'),
+    data: form.serialize(),
+    success: function (data) {
+      reset_errors();
+
+      if(data.errors) {
+        show_errors(data.errors, '_edit');
+        alert(I18n.t("stores.edit.fail"));
+      } else {
+        alert(I18n.t("stores.edit.success"));
+        $
+        $('#edit_form').html('');
+        $('#address-' + data.success.id).html(data.success.address);
+        $('#phone-' + data.success.id).html(data.success.phone);
+      }
+    }
+  });
+});
+
+$(document).on('click', '#add_store', function() {
+  $.ajax({
+    url: '/manager/stores/new',
+    type: 'get',
+    dataType: 'script'
+  });
+});
+
+$(document).on('submit', '.new_store', function(e) {
+  e.preventDefault();
+  form = $('.new_store');
+
+  $.ajax({
+    type: form.attr('method'),
+    url: form.attr('action'),
+    data: form.serialize(),
+    success: function (data) {
+      reset_errors();
+
+      if(data.errors) {
+        show_errors(data.errors, '_new');
+      } else {
+        $('#table_stores').append(data.success);
+        alert(I18n.t("stores.add.success"));
+      }
+    }
+  });
 });
