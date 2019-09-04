@@ -3,45 +3,20 @@
     <div class="col-12">
       <div class="card">
         <div class="card-body">
-          <h3><%= @combo.name %></h3>
-          <p><%= @combo.price %></p>
-          <%= enum_l @combo, :status %><br>
+          <h3><%= @product.name %></h3>
+          <p><%= @product.price %></p>
+          <%= enum_l @product, :status %><br>
         </div>
       </div>
     </div>
 
     <div class="col-2">
       <strong><%= t ".thumbnails" %></strong>
-      <%= render "image_show", images: @combo.images.thumbnail, id: "image-1" %>
+      <%= render "image_show", images: @product.images.thumbnail, id: "image-1" %>
     </div>
     <div class="col-2">
       <strong><%= t ".images" %></strong>
-      <%= render "image_show", images: @combo.images.image, id: "image-2" %>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-12">
-      <div class="card">
-        <div class="card-body">
-          <h4 class="card-title"><%= t ".product_of_combo" %></h4>
-          <div class="table-responsive">
-            <table class="table table-striped">
-              <thead>
-                <tr>
-                  <th><%= t ".stt" %></th>
-                  <th><%= t ".name" %></th>
-                  <th><%= t ".count" %></th>
-                  <th><%= t ".price" %></th>
-                </tr>
-              </thead>
-              <tbody id="table_combos">
-                <%= render partial: "product", collection: @products %>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
+      <%= render "image_show", images: @product.images.image, id: "image-2" %>
     </div>
   </div>
 

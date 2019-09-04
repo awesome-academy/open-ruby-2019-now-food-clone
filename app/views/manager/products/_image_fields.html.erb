@@ -1,0 +1,19 @@
+<div class="nested-fields mt-2">
+  <div class="field">
+    <div class="row">
+      <div class="col-4">
+        <%= f.file_field :url, class: "form-control" %>
+      </div>
+      <div class="col-4">
+        <%= f.select :image_type,
+          options_for_select(enum_options_for_select(Image, :image_type),
+          selected: f.object.image_type), {include_blank: false},
+          {class: "form-control"} %>
+      </div>
+      <div class="col-2">
+        <%= link_to_remove_association t(".delete_image"), f,
+          class: "btn btn-danger btn-sm" %>
+      </div>
+    </div>
+  </div>
+</div>

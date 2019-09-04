@@ -6,4 +6,8 @@ module ApplicationHelper
   def get_index key
     key + Settings.page.start
   end
+
+  def get_stores
+    current_user.stores.pluck :address, :id
+  end
 end
