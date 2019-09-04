@@ -24,6 +24,11 @@
             <i class="fa fa-list-alt"></i>
             <span class="hide-menu"><%= t ".combo" %></span>
           <% end %>
+
+          <%= link_to manager_products_path, class: "waves-effect waves-dark", "aria-expanded": "false" do %>
+            <i class="fa fa-product-hunt"></i>
+            <span class="hide-menu"><%= t ".product" %></span>
+          <% end %>
         <li>
       </ul>
     </nav>

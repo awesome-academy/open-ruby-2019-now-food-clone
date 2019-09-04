@@ -1,6 +1,6 @@
 <li  id="comment-<%= comment.id %>">
   <div class="comment-show">
-    <h6><%= comment.content %></h6>
+    <h6><i class="fa fa-reply-all"></i> <%= comment.content %></h6>
     <span>
       <%= link_to [:manager, comment], method: :delete,
         data: {confirm: t(".sure")}, remote: true do %>

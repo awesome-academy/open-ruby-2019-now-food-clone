@@ -55,6 +55,7 @@ en:
       slider:
         dashboard: "Dashboard"
         combo: "Combo"
+        product: "Product"
       header:
         placeholder_search: "Search &amp; enter"
         home: "home"
@@ -260,6 +261,67 @@ en:
         delete_product: "Delete product"
       image_fields:
         delete_image: "Delete images"
+      image_show:
+        previous: "Previous"
+        next: "Next"
+    products:
+      show:
+        thumbnails: "Thumbnails"
+        images: "Images"
+        stt: "STT"
+        name: "Name"
+        count: "Count"
+        price: "Price"
+        comment: "Comment"
+        content_and_reply: "Comtent and reply"
+        reply: "Reply"
+        comment_by: "Comment by"
+        created_at: "Created at"
+        sure: "Sure delete ?"
+      load_product:
+        not_exits: "Product not exit"
+      index:
+        home: "Home"
+        new_product: "Create new product"
+        stt: "STT"
+        thumbnail: "Thumbnail"
+        name: "Name"
+        price: "Price"
+        status: "Status"
+      search:
+        name: "Name"
+        price: "Price"
+        search: "Search"
+        price_from: "Price from"
+        price_to: "Price to"
+        status: "Status"
+        store: "Store"
+      product:
+        sure: "Sure delete ?"
+      destroy:
+        success: "Delete success"
+        error: "Delete fail"
+      create:
+        success: "Create success"
+        error: "Create fail"
+      update:
+        success: "Update success"
+      new:
+        new_product: "New product"
+      form:
+        add_image: "Add image"
+        name: "Name"
+        price: "Price"
+        store: "Store"
+        list_product: "List product"
+        add_product: "Add product"
+        submit: "Submit"
+        reset: "Reset"
+      combo_product_fields:
+        delete_product: "Delete product"
+      image_fields:
+        delete_image: "Delete images"
+        alt : "Alt"
   time:
     formats:
       date_month_year: "%H:%M:%S - %d-%m-%Y"
