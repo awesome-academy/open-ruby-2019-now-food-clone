@@ -2,6 +2,6 @@
   alert('<%= t ".fail" %>');
 <% else %>
   alert('<%= t ".success" %>');
-  $('#reply_comment').append('<%= j render "comment", comment: @comment %>');
-  $('#content_comment').val('');
+  $('#reply_comment_<%= @comment.parent_comment_id %>').append('<%= j render "comment", comment: @comment %>');
+  $('#content_comment_<%= @comment.id %>').val('');
 <% end %>

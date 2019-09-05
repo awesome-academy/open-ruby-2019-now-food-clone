@@ -1,6 +1,6 @@
 class Manager::ProductsController < ManagerController
   before_action :load_product, except: %i(index create new)
-  before_action :is_manager
+  before_action :load_parent_comments, only: %i(show)
 
   def index
     @search = Product.ransack params[:search]
@@ -36,7 +36,7 @@ class Manager::ProductsController < ManagerController
     redirect_to root_path
   end
 
-  def is_manager
-    redirect_to root_path unless current_user.manager?
+  def load_parent_comments
+    @parent_comments = @product.comments.parent_comment
   end
 end

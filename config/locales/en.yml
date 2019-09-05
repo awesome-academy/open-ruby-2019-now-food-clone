@@ -14,6 +14,10 @@ en:
         image_types:
           image: "Image"
           thumbnail: "Thumbnail"
+      product:
+        statuses:
+          active: "Active"
+          in_active: "In actice"
   shared:
     error_messages:
       error:
@@ -189,6 +193,9 @@ en:
       load_store:
         not_exits: "Store not exit"
     comments:
+      create:
+        success: "Create comment success"
+        fail: "Create comment fail"
       load_comment:
         not_exits: "Comment not exit"
       comment:
@@ -265,6 +272,12 @@ en:
         previous: "Previous"
         next: "Next"
     products:
+      comment:
+        sure: "Sure delete ?"
+      edit:
+        edit_product: "Edit product"
+      new:
+        new_product: "Create new product"
       show:
         thumbnails: "Thumbnails"
         images: "Images"
@@ -322,6 +335,9 @@ en:
       image_fields:
         delete_image: "Delete images"
         alt : "Alt"
+      image_show:
+        previous: "Previous"
+        next: "Next"
   time:
     formats:
       date_month_year: "%H:%M:%S - %d-%m-%Y"

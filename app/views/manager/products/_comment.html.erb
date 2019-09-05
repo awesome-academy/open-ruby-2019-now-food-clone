@@ -7,15 +7,15 @@
       <div class="card-body">
         <ul class="comment" id="reply_comment_<%= comment.id %>">
           <li id="comment-<%= comment.id %>">
-          <div class="comment-show">
-            <h4><i class="fa fa-comment"></i> <%= comment.content %></h4>
-          </div>
-          <span class="time">
-            <%= comment.created_at %>
-          </span>
-          <hr>
-        <li>
-          <% get_sub_comment(comment).each do |sub_comment| %>  
+            <div class="comment-show">
+              <h4><i class="fa fa-comment"></i> <%= comment.content %></h4>
+            </div>
+            <span class="time">
+              <%= comment.created_at %>
+            </span>
+            <hr>
+          <li>
+          <% get_sub_comment(comment).each do |sub_comment| %>
             <li class="w-40" id="comment-<%= sub_comment.id %>">
               <div class="comment-show">
                 <h6><i class="fa fa-reply-all"></i> <%= sub_comment.content %></h6>
