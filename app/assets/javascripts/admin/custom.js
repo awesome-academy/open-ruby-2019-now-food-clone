@@ -159,3 +159,22 @@ $(document).on('submit', '.new_store', function(e) {
     }
   });
 });
+
+$(document).on('change', '.bill_status', function() {
+  var id = $(this).attr('bill_id');
+  var status = $(this).val();
+
+  $.ajax({
+    url: '/manager/bills/' + id,
+    type: 'put',
+    dataType: 'json',
+    data: {'status': status},
+    success: function(data) {
+      if(data.state == "success") {
+        alert(I18n.t("manager.bills.edit.success"));
+      } else {
+        alert(I18n.t("manager.bills.edit.fail"));
+      }
+    }
+  });
+});

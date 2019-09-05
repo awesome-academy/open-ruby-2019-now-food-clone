@@ -9,6 +9,36 @@ class Manager::ProductsController < ManagerController
       .per Settings.manager.product.num_in_page
   end
 
+  def new
+    @product = Product.new
+  end
+
+  def edit; end
+
+  def show
+    @comment = Comment.new
+  end
+
+  def create
+    @product = Product.new product_params
+    
+    if @product.save
+      flash[:success] = t(".success")
+      redirect_to manager_products_path
+    else
+      render :new
+    end
+  end
+
+  def update
+    if @product.update_attributes product_params
+      flash[:success] = t(".success")
+      redirect_to manager_products_path
+    else
+      render :new
+    end
+  end
+
   def destroy
     if @product.destroy
       flash[:success] = t(".success")

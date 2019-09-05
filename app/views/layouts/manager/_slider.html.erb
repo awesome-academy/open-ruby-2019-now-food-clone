@@ -29,6 +29,11 @@
             <i class="fa fa-product-hunt"></i>
             <span class="hide-menu"><%= t ".product" %></span>
           <% end %>
+
+          <%= link_to manager_bills_path, class: "waves-effect waves-dark", "aria-expanded": "false" do %>
+            <i class="fa fa-bell"></i>
+            <span class="hide-menu"><%= t ".bill" %></span>
+          <% end %>
         <li>
       </ul>
     </nav>

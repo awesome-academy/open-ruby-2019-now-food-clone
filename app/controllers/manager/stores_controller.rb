@@ -29,7 +29,7 @@ class Manager::StoresController < ManagerController
   end
 
   def update
-    if @store.update store_params
+    if @store.update_attributes store_params
       render json: {success: @store}
     else
       render json: {errors: @store.errors}

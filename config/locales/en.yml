@@ -18,6 +18,13 @@ en:
         statuses:
           active: "Active"
           in_active: "In actice"
+      bill:
+        statuses:
+          cancel: "Cancel"
+          in_processing: "In processing"
+          packing: "Packing"
+          shipping: "Shipping"
+          success: "Success"
   shared:
     error_messages:
       error:
@@ -65,6 +72,7 @@ en:
         home: "home"
         store_manager: "Store manager"
         show_store: "Show store"
+        close: "Close"
       footer:
         description: "© 2019 Elegent Admin by wrappixel.com"
   devise:
@@ -203,6 +211,38 @@ en:
       destroy:
         fail: "Destroy comment fail"
         success: "Destroy comment success"
+    bills:
+      edit:
+        success: "Edit bill success"
+        fail: "Edit bill fail"
+      search:
+        status: "Status"
+        store: "Store"
+        name: "Customer name"
+        address: "Receiving address"
+        store: "Suplier"
+        search: "Search"
+      index:
+        bills_of_store: "Bills of store"
+        stt: "STT"
+        custommer: "Custommer"
+        receiving_address: "Reveiving address"
+        store: "Store"
+        created_at: "Created at"
+        updated_at: "Updated at"
+        status: "Status"
+        empty: "Data not available"
+      show:
+        stt: "STT"
+        custommer: "Custommer"
+        receiving_address: "Reveiving address"
+        store: "Store"
+        created_at: "Created at"
+        updated_at: "Updated at"
+        type: "Type"
+        name: "Name"
+        price: "Price"
+        count: "Count"
     combos:
       show:
         thumbnails: "Thumbnails"
