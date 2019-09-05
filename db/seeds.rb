@@ -20,7 +20,7 @@ User.create!(
   role: Settings.account.manager.role,
   created_at: Time.zone.now)
 
-20.times do |n|
+50.times do |n|
   email = FFaker::Internet::free_email
   name = FFaker::Name.name
   address = FFaker::Address.city
@@ -37,7 +37,7 @@ User.create!(
     created_at: Time.zone.now)
 end
 
-20.times do |n|
+50.times do |n|
   name = FFaker::AddressCA::province
 
   Province.create!(
@@ -45,7 +45,7 @@ end
     created_at: Time.zone.now)
 end
 
-50.times do |n|
+100.times do |n|
   name = FFaker::Address::city
   
   District.create!(
@@ -54,13 +54,13 @@ end
     created_at: Time.zone.now)
 end
 
-50.times do |n|
+100.times do |n|
   address = FFaker::Address.city
   phone = FFaker::PhoneNumber.phone_number
   user_id = User.ids.sample
   district_id = District.ids.sample
   start_time = "6-am"
-  end_time = "20-pm"
+  end_time = "50-pm"
   
   Store.create!(
     address: address,
@@ -72,7 +72,7 @@ end
     created_at: Time.zone.now)
 end
 
-50.times do |n|
+100.times do |n|
   name = FFaker::Name.name
   status = 1
   price = rand(100000..900000)
@@ -85,7 +85,7 @@ end
     store_id: store_id)
 end
 
-50.times do |n|
+100.times do |n|
   name = FFaker::Product.product_name
   status = 1
   price = rand(100000..900000)
@@ -98,7 +98,7 @@ end
     store_id: store_id)
 end
 
-50.times do |n|
+100.times do |n|
   combo_id = Combo.ids.sample
   product_id = Product.ids.sample
   
@@ -107,7 +107,7 @@ end
     product_id: product_id)
 end
 
-50.times do |n|
+100.times do |n|
   content = FFaker::Lorem.paragraph
   user_id = User.ids.sample
   parent_comment_id = ([1, 2].sample.eql? 1) ? Comment.ids.sample : ""
@@ -123,7 +123,7 @@ end
     created_at: Time.zone.now)
 end
 
-50.times do |n|
+100.times do |n|
   status = 0
   user_id = User.ids.sample
   store_id = Store.ids.sample
@@ -137,7 +137,7 @@ end
     created_at: Time.zone.now)
 end
 
-50.times do |n|
+100.times do |n|
   bill_id = Bill.ids.sample
   bill_detailable_type = ["Combo", "Product"].sample
   bill_detailable_id = (bill_detailable_type.eql? "Combo") ? Combo.ids.sample : Product.ids.sample
@@ -152,7 +152,7 @@ end
     price: price)
 end
 
-50.times do |n|
+100.times do |n|
   url = "defaultl.png"
   alt = "default image"
   image_type = "thumbnail"

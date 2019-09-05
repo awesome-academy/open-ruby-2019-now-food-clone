@@ -66,5 +66,10 @@ upload:
     default: "default.png"
   width: 200
   height: 200
+product:
+  max_name_length: 128
+  min_name_length: 3
+  width: 200
+  height: 200
 step: 1
 zero: 0

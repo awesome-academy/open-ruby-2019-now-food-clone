@@ -1,0 +1,21 @@
+<tr id="<%= "product-#{product.id}" %>" class="<%= "stt-#{product_counter}" %>">
+  <td><%= get_index_page product_counter %></td>
+  <td><%= image_tag product.images.thumbnail if product.images.thumbnail.nil? %></td>
+  <td><%= product.name %></td>
+  <td><%= product.price %></td>
+  <td><%= product.status %></td>
+  <td>
+    <%= link_to "#", class: "btn btn-info btn-sm" do %>
+      <i class="fa fa-eye"></i>
+    <% end %>
+
+    <%= link_to "#", class: "btn btn-warning btn-sm" do %>
+      <i class="fa fa-edit"></i>
+    <% end %>
+
+    <%= link_to manager_product_path(product), method: :delete, data: {confirm: t(".sure")},
+      class: "btn btn-danger btn-sm" do %>
+      <i class="fa fa-trash"></i>
+    <% end %>
+  </td>
+</tr>
