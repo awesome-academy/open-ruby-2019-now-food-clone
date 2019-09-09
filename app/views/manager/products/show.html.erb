@@ -12,11 +12,11 @@
 
     <div class="col-2">
       <strong><%= t ".thumbnails" %></strong>
-      <%= render "image_show", images: @product.images.thumbnail, id: "image-1" %>
+      <%= render "image_show", images: get_thumbnails(@product), id: "image-1" %>
     </div>
     <div class="col-2">
       <strong><%= t ".images" %></strong>
-      <%= render "image_show", images: @product.images.image, id: "image-2" %>
+      <%= render "image_show", images: get_images(@product), id: "image-2" %>
     </div>
   </div>
 

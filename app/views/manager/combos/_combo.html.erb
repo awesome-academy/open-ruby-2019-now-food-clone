@@ -1,6 +1,6 @@
 <tr id="<%= "combo-#{combo.id}" %>" class="<%= "stt-#{combo_counter}" %>">
   <td><%= get_index_page combo_counter %></td>
-  <td><%= image_tag combo.images.thumbnail if combo.images.thumbnail.nil? %></td>
+  <td><%= image_tag get_thumnail(combo) %></td>
   <td><%= combo.name %></td>
   <td><%= combo.price %></td>
   <td><%= combo.status %></td>

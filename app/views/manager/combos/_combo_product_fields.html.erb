@@ -5,15 +5,19 @@
         <%= f.select :product_id,
           options_for_select(get_products, selected: f.object.product_id),
           {include_blank: false},
-          {class: "form-control add_product_to_combo_product"} %>
+          {class: "form-control select2"} %>
       </div>
       <div class="col-4">
         <%= f.number_field :count, class: "form-control" %>
       </div>
       <div class="col-2">
-        <%= link_to_remove_association t(".delete_product"), f,
-          class: "btn btn-danger btn-sm" %>
+        <%= link_to_remove_association f,
+          class: "btn btn-danger btn-sm" do %>
+           <i class="fa fa-trash"></i> <% t ".delete_product" %>
+        <% end %>
       </div>
     </div>
   </div>
 </div>
+
+<%= javascript_include_tag Settings.url_select2 %>

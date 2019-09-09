@@ -12,15 +12,15 @@ module ApplicationHelper
   end
 
   def get_thumnail imageable
-    imageable.images.thumbnail.present? ? "#{imageable.images.thumbnail.first.url}" : "#{Settings.default}"
+    imageable.images.thumbnail.present? ? "#{imageable.images.thumbnail.first.url}" : "#{Settings.upload.default}"
   end
 
-  def get_images imageable, thumbnail
-    if :thumbnail.eql? thumbnail
-      imageable.images.thumbnail
-    else
-      imageable.images.image
-    end
+  def get_thumbnails imageable
+    imageable.images.thumbnail
+  end
+
+  def get_images imageable
+    imageable.images.image
   end
 
   def number_to_vnd number
