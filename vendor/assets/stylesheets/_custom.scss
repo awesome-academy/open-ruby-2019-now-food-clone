@@ -1,9 +1,23 @@
 @import 'variables';
 
+.login {
+  background: $darkcyan;
+  width: 70%;
+  margin-left: 15%;
+}
+
+.login .card-body {
+  padding-bottom: 50px;
+}
+
 .container-login{
   margin: 80px 50px;
   height: 100%;
   align-content: center;
+}
+
+.login .card-footer a, .login .card-body a {
+  color: $while_e !important;
 }
 
  .card{
@@ -12,14 +26,6 @@ margin-top: auto;
 margin-bottom: auto;
 width: 400px;
 background-color: $black_1 !important;
-}
-
-.login {
-  height: 350px;
-}
-
-.register {
-  height: 450px;
 }
 
 .edit_profile {
@@ -100,7 +106,7 @@ margin-left: 4px;
 }
 
 #error_explanation li {
-  color: $primary-color;
+  color: $while_e;
 }
 
 #error_explanation h2 {

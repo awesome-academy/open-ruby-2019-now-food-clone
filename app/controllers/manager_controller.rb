@@ -1,4 +1,5 @@
 class ManagerController < ActionController::Base
+  before_action :authenticate_user!
   before_action :verify_manager
 
   def manager_user

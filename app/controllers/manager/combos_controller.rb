@@ -5,7 +5,7 @@ class Manager::CombosController < ManagerController
 
   def index
     @search = Combo.ransack params[:search]
-    @combos = @search.result.page(params[:page])
+    @combos = @search.result.includes(:images).page(params[:page])
       .combo_of_current_user(combo_id_current_user)
       .per Settings.manager.combo.num_in_page
   end

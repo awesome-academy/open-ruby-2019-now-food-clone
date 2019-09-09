@@ -67,15 +67,19 @@ en:
         dashboard: "Dashboard"
         combo: "Combo"
         product: "Product"
+        bill: "Bill"
       header:
         placeholder_search: "Search &amp; enter"
         home: "home"
         store_manager: "Store manager"
         show_store: "Show store"
         close: "Close"
+        logout: "Logout"
       footer:
         description: "© 2019 Elegent Admin by wrappixel.com"
   devise:
+    multiple_login:
+      login_facebook: "Login width facebook"
     shared:
       links: 
         login: "Login"
@@ -110,6 +114,8 @@ en:
         email: "Email"
         name: "Name"
         password: "Password"
+        address: "Address"
+        phone: "Phone"
         password_confirmation: "Password Confirmation"
         new_password: "new-password"
         sign_up: "Sign up"
@@ -145,6 +151,7 @@ en:
         name: "Name"
         email: "Email"
         search: "Search"
+        role: "Role"
       user:
         sure: "Sure delete ?"
       form:
@@ -173,13 +180,16 @@ en:
     edit:
       error: "Edit store fail"
       success: "Edit store success"
+  bills:
+    edit:
+      error: "Update bill fail"
+      success: "Update bill success"
   manager:
     districts:
       districts:
+        districts: "Districts" 
+      districts:
         districts: "Districts"
-    stores:
-      store:
-        sure: "Sure delete ?"
       edit:
         edit_store: "Edit store"
       form:
@@ -204,6 +214,68 @@ en:
       create:
         success: "Create comment success"
         fail: "Create comment fail"
+    bills:
+      edit:
+        success: "Edit bill success"
+        fail: "Edit bill fail"
+      search:
+        status: "Status"
+        store: "Store"
+        name: "Customer name"
+        address: "Receiving address"
+        store: "Suplier"
+        search: "Search"
+      index:
+        bills_of_store: "Bills of store"
+        stt: "STT"
+        custommer: "Custommer"
+        receiving_address: "Reveiving address"
+        store: "Store"
+        created_at: "Created at"
+        updated_at: "Updated at"
+        status: "Status"
+        empty: "Data not available"
+      show:
+        stt: "STT"
+        custommer: "Custommer"
+        receiving_address: "Reveiving address"
+        store: "Store"
+        created_at: "Created at"
+        updated_at: "Updated at"
+        type: "Type"
+        name: "Name"
+        price: "Price"
+        count: "Count"
+    stores:
+      create:
+        sure: "Sure"
+      store:
+        sure: "Sure delete ?"
+      districts:
+        districts: "Districts"
+      edit:
+        edit_store: "Edit store"
+      form:
+        address: "Address"
+        phone: "Phone"
+        provinces: "Provinces"
+        districts: "Districts"
+        submit: "Submit"
+        reset: "Reset"
+      index:
+        stt: "STT"
+        phone: "Phone"
+        address: "Address"
+        sure: "Sure delete ?"
+        add_store: "Add store"
+      new:
+        new_store: "New store"
+      destroy:
+        success: "Delete store success"
+        error: "Delete store fail"
+      load_store:
+        not_exits: "Store not exit"
+    comments:
       load_comment:
         not_exits: "Comment not exit"
       comment:
@@ -297,6 +369,8 @@ en:
       new:
         new_combo: "New combo"
       form:
+        name_product: "Name product"
+        count_product: "Count"
         name: "Name"
         price: "Price"
         store: "Store"
@@ -308,6 +382,7 @@ en:
         delete_product: "Delete product"
       image_fields:
         delete_image: "Delete images"
+        alt: "Description image"
       image_show:
         previous: "Previous"
         next: "Next"
@@ -374,7 +449,7 @@ en:
         delete_product: "Delete product"
       image_fields:
         delete_image: "Delete images"
-        alt : "Alt"
+        alt: "Description image"
       image_show:
         previous: "Previous"
         next: "Next"

@@ -17,20 +17,29 @@
       <div class="dropdown">
         <button class="btn btn-sm btn-warning dropdown-toggle" type="button" id="dropdown_store"
           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <%= t ".store_manager" %>
+          <i class="fa fa-star"></i> <%= t ".store_manager" %>
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdown_store">
           <%= link_to "#", class: "dropdown-item", "data-toggle": "modal",
             "data-target": "#show_store", id: "get_store" do %>
-            <%= t ".show_store" %>
+            <i class="fa fa-star"></i> <%= t ".show_store" %>
           <% end %>
         </div>
       </div>
 
+      <ul class="navbar-nav mr-4 ml-2">
+        <li>
+            <%= link_to destroy_user_session_path, method: :delete,
+              class: "btn btn-danger btn-sm" do %>
+              <i class="fa fa-sign-out"></i> <%= t ".logout" %>
+            <% end %>
+          </li>
+      </ul>
+
       <ul class="navbar-nav my-lg-0">
         <li class="nav-item dropdown">
           <%= link_to "#", class: "nav-link dropdown-toggle text-muted waves-effect waves-dark",
-"data-toggle": "dropdown", "aria-haspopup": "true", "aria-expanded": "false" do %>
+  "data-toggle": "dropdown", "aria-haspopup": "true", "aria-expanded": "false" do %>
             <%= image_tag "avata.png", alt: "user", class: "img-circle", width: Settings.manager.width_avata %>
           <% end %>
         </li>
@@ -47,9 +56,6 @@
     <div class="modal-content">
       <div class="modal-header">
         <div id="message_store" class="alert d-none w-80 mt-1">
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">×</span>
-          </button>
           <i class="fa fa-check mx-2"></i>
           <strong id="content_store"></strong>
         </div>

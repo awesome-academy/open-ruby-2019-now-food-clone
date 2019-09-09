@@ -1,6 +1,6 @@
 <div class="container-login">
-  <div class="d-flex justify-content-center h-100">
-    <div class="card edit_profile">
+  <div class="justify-content-center h-100">
+    <div class="login">
       <div class="card-header">
         <h2><%= "#{t ".edit"} #{current_user.name}" %></h2>
       </div>
@@ -22,6 +22,20 @@
             </div>
             <%= f.text_field :name, autofocus: true, autocomplete: t(".name"),
               class: "form-control", placeholder: t(".name") %>
+          </div>
+          <div class="input-group form-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fa fa-map-pin"></i></span>
+            </div>
+            <%= f.text_field :address, autofocus: true, autocomplete: t(".address"),
+              class: "form-control", placeholder: t(".address") %>
+          </div>
+          <div class="input-group form-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fa fa-phone"></i></span>
+            </div>
+            <%= f.text_field :phone, autofocus: true, autocomplete: t(".phone"),
+              class: "form-control", placeholder: t(".phone") %>
           </div>
           <% if @minimum_password_length %>
           <em>(<%= t ".characters_minimum", {"count": @minimum_password_length} %>)</em>

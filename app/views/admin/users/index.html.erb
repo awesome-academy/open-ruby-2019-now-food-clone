@@ -3,6 +3,7 @@
     <div class="col-md-5 align-self-center">
       <button class="btn btn-sm btn-success" id="form_new_user"
         data-toggle="modal" data-target="#form_new">
+        <i class="fa fa-plus"></i>
         <%=  t ".new_user" %>
       </button>
     </div>
@@ -10,7 +11,7 @@
       <div class="d-flex justify-content-end align-items-center">
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><%= link_to t(".home"), admin_home_path %></li>
-          <li class="breadcrumb-item active"><%= t ".new_user" %></li>
+          <li class="breadcrumb-item active"><i class="fa fa-plus"></i> <%= t ".new_user" %></li>
         </ol>
       </div>
     </div>
@@ -99,3 +100,5 @@
     </div>
   </div>
 </div>
+
+<script src="/assets/admin/select2.js"></script>
