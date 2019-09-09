@@ -23,8 +23,7 @@
       <%= f.label t(".store") %>
       <%= f.select :store_id, options_for_select(get_stores,
         selected: f.object.store_id),
-        {include_blank: false}, {class: "js-example-basic-single js-states
-        form-control",id: "id_label_single"} %>
+        {include_blank: false}, {class: "select2 form-control"} %>
       <div class="my_error">
         <% @combo.errors[:store_id].each do |error| %>
           <p><%= error %></p>
@@ -37,8 +36,10 @@
       <%= render "image_fields", {f: image} %>
     <% end %>
     <div class="links">
-      <%= link_to_add_association t(".add_image"), f, :images,
-        class: "btn btn-success btn-sm mt-3" %>
+      <%= link_to_add_association f, :images,
+        class: "btn btn-success btn-sm mt-3" do %>
+        <i class="fa fa-plus"></i> <%= t ".add_image" %>
+      <% end %>
     </div>
   </div><hr>
 
@@ -46,17 +47,32 @@
     <strong><%= t ".list_product" %></strong>
   </div>
 
-  <div id="tasks">
+  <div id="tasks"><hr>
+    <div class="row">
+      <div class="col-6">
+        <%= t ".name_product" %>
+      </div>
+      <div class="col-4">
+        <%= t ".count_product" %>
+      </div>
+    </div>
+
     <%= f.fields_for :combo_products do |combo_product| %>
       <%= render "combo_product_fields", {f: combo_product} %>
     <% end %>
     <div class="links">
-      <%= link_to_add_association t(".add_product"), f, :combo_products,
-        class: "btn btn-success btn-sm mt-3" %>
-      <%= f.submit t(".submit"), class: "btn btn-primary btn-sm mt-3",
-        data: {disable_with: false} %>
-      <%= button_tag t(".reset"), type: :reset,
-        class: "btn btn-warning btn-sm mr-2 mt-3" %>
+      <%= link_to_add_association f, :combo_products,
+        class: "btn btn-success btn-sm mt-3" do %>
+        <i class="fa fa-plus"></i> <%= t ".add_product" %>
+      <% end %>
+      <%= button_tag type: :submit, class: "btn btn-primary btn-sm mt-3",
+        data: {disable_with: false} do %>
+        <i class="fa fa-paper-plane"></i> <%= t ".submit" %>
+      <% end %>
+      <%= button_tag type: :reset,
+        class: "btn btn-warning btn-sm mr-2 mt-3" do %>
+        <i class="fa fa-reply"></i> <%= t ".reset" %>
+      <% end %>
     </div>
   </div>
 <% end %>

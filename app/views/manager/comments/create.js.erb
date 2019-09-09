@@ -1,7 +1,6 @@
 <% if @comment.errors.present? %>
   alert('<%= t ".fail" %>');
 <% else %>
-  alert('<%= t ".success" %>');
   $('#reply_comment_<%= @comment.parent_comment_id %>').append('<%= j render "comment", comment: @comment %>');
-  $('#content_comment_<%= @comment.id %>').val('');
+  $('#content_comment-<%= @comment.parent_comment_id %>').val('');
 <% end %>

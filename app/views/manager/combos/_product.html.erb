@@ -2,5 +2,5 @@
   <th><%= product_counter + Settings.step %></th>
   <th><%= link_to product.name, "#" %></th>
   <th><%= get_count_in_combo_product @combo.id, product.id %></th>
-  <th><%= product.price %></th>
+  <th><%= number_to_vnd product.price %></th>
 </tr>

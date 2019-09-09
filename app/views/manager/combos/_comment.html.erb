@@ -1,7 +1,7 @@
 <tr id="comment-<%= comment.id %>">
   <th><%= comment_counter + Settings.step %></th>
   <th><%= comment.user.name %></th>
-  <th><%= comment.created_at %></th>
+  <th><%= l comment.created_at, format: :date_month_year %></th>
   <th class="w-50" id="sub-comment">
     <div class="card">
       <div class="card-body">
@@ -11,7 +11,7 @@
             <h4><i class="fa fa-comment"></i> <%= comment.content %></h4>
           </div>
           <span class="time">
-            <%= comment.created_at %>
+            <%= l comment.created_at, format: :date_month_year %>
           </span>
           <hr>
         <li>

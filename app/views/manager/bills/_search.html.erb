@@ -21,7 +21,7 @@
           <%= f.select :status_eq,
             options_for_select(enum_options_for_select_value(Bill, :status),
             selected: f.object.status_eq),
-            {include_blank: t(".seach")}, {class: "form-control"} %>
+            {include_blank: t(".seach")}, {class: "select2 form-control"} %>
           </div>
         </div>
       </div>
@@ -32,14 +32,15 @@
           <%= f.label t(".store") %>
             <%= f.select :store_id_eq, options_for_select(get_stores,
               selected: f.object.store_id_eq),
-              {include_blank: t(".seach")}, {class: "js-example-basic-single js-states
-              form-control",id: "id_label_single"} %>
+              {include_blank: t(".seach")}, {class: "select2 form-control"} %>
           </div>
         </div>
       </div>
 
       <div class="col-12">
-        <%= f.submit t(".search"), class: "btn btn-success btn-sm mb-2 pt-0" %>
+        <%= button_tag type: :submit, class: "btn btn-success btn-sm mb-2 pt-0" do %>
+          <i class="fa fa-search"></i> <%= t ".search" %>
+        <% end %>
       </div>
     </div>
   <% end %>

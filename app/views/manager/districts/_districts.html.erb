@@ -1,3 +1,3 @@
 <%= label_tag t(".districts") %>
 <%= select_tag "store[district_id]", options_for_select(@districts.pluck :name, :id),
-  id: "districts", class: "form-control mb-1" %>
+  id: "districts", class: "form-control select2" %>
