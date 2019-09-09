@@ -4,46 +4,49 @@
       <div class="card">
         <div class="card-body">
           <h3><%= @product.name %></h3>
-          <p><%= @product.price %></p>
+          <p><%= number_to_vnd @product.price %></p>
           <%= enum_l @product, :status %><br>
         </div>
       </div>
     </div>
 
-    <div class="col-2">
+    <div class="col-3">
       <strong><%= t ".thumbnails" %></strong>
       <%= render "image_show", images: get_thumbnails(@product), id: "image-1" %>
     </div>
-    <div class="col-2">
+
+    <div class="col-3">
       <strong><%= t ".images" %></strong>
       <%= render "image_show", images: get_images(@product), id: "image-2" %>
     </div>
   </div>
 
-  <div class="row">
-    <div class="col-12">
-      <div class="card">
-        <div class="card-body">
-          <h4 class="card-title"><%= t ".comment" %></h4>
-          <div class="table-responsive">
-            <table class="table table-striped">
-              <thead>
-                <tr>
-                  <th><%= t ".stt" %></th>
-                  <th><%= t ".comment_by" %></th>
-                  <th><%= t ".created_at" %></th>
-                  <th class="w-50" ><%= t ".content_and_reply" %></th>
-                  <th><%= t ".reply" %></th>
-                  <th></th>
-                </tr>
-              </thead>
-              <tbody id="table_comments">
-                <%= render partial: "comment", collection: @parent_comments %>
-              </tbody>
-            </table>
+  <% if @parent_comments.present? %>
+    <div class="row">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title"><%= t ".comment" %></h4>
+            <div class="table-responsive">
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th><%= t ".stt" %></th>
+                    <th><%= t ".comment_by" %></th>
+                    <th><%= t ".created_at" %></th>
+                    <th class="w-50" ><%= t ".content_and_reply" %></th>
+                    <th><%= t ".reply" %></th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody id="table_comments">
+                  <%= render partial: "comment", collection: @parent_comments %>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
+  <% end %>
 </div>

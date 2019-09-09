@@ -2,7 +2,7 @@
   <td><%= get_index_page product_counter %></td>
   <td><%= image_tag get_thumnail(product) %></td>
   <td><%= product.name %></td>
-  <td><%= product.price %></td>
+  <td><%= number_to_vnd product.price %></td>
   <td><%= product.status %></td>
   <td>
     <%= link_to manager_product_path(product), class: "btn btn-info btn-sm" do %>

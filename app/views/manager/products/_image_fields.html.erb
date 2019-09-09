@@ -8,12 +8,19 @@
         <%= f.select :image_type,
           options_for_select(enum_options_for_select(Image, :image_type),
           selected: f.object.image_type), {include_blank: false},
-          {class: "form-control"} %>
+          {class: "form-control select2"} %>
       </div>
-      <div class="col-2">
-        <%= link_to_remove_association t(".delete_image"), f,
-          class: "btn btn-danger btn-sm" %>
+      <div class="col-3">
+        <%= f.text_field :alt, class: "form-control", placeholder: t(".alt") %>
+      </div>
+      <div class="col-1">
+        <%= link_to_remove_association f,
+          class: "btn btn-danger btn-sm" do %>
+          <i class="fa fa-trash"></i>
+        <% end %>
       </div>
     </div>
   </div>
 </div>
+
+<%= javascript_include_tag Settings.url_select2 %>

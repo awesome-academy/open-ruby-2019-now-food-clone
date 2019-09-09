@@ -1,14 +1,16 @@
 <div class="container-fluid">
   <div class="row page-titles">
     <div class="col-md-5 align-self-center">
-      <%= link_to t(".new_product"), new_manager_product_path,
-        class: "btn btn-sm btn-success" %>
+      <%= link_to new_manager_product_path,
+        class: "btn btn-sm btn-success" do %>
+        <i class="fa fa-plus"></i> <%= t ".new_product" %>
+      <% end %>
     </div>
     <div class="col-md-7 align-self-center text-right">
       <div class="d-flex justify-content-end align-items-center">
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><%= link_to t(".home"), manager_home_path %></li>
-          <li class="breadcrumb-item active"><%= t ".new_product" %></li>
+          <li class="breadcrumb-item active"><i class="fa fa-plus"></i> <%= t ".new_product" %></li>
         </ol>
       </div>
     </div>
