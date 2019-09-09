@@ -42,6 +42,11 @@ class Manager::StoresController < ManagerController
     respond_to :js
   end
 
+  def get_districts
+    @districts = District.by_province_id params[:id]
+    respond_to :js
+  end
+
   private
 
   def store_params

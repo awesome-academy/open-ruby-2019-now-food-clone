@@ -13,10 +13,13 @@
       <i class="fa fa-eye"></i>
     </button>
 
-    <button class="btn btn-warning btn-sm" onclick="edit_user('<%= user.id %>', '<%= user_counter %>');"
-      data-toggle="modal" data-target="#form_edit">
-      <i class="fa fa-edit"></i>
-    </button>
+    <% if user.manager? %>
+      <button class="btn btn-warning btn-sm" onclick="edit_user('<%= user.id %>', '<%= user_counter %>');"
+        data-toggle="modal" data-target="#form_edit">
+        <i class="fa fa-edit"></i>
+      </button>
+    <% end %>
+
     <% unless user.admin? %>
       <%= link_to admin_user_path(user), method: :delete, data: {confirm: t(".sure")}, class: "btn btn-danger btn-sm" do %>
         <i class="fa fa-trash"></i>

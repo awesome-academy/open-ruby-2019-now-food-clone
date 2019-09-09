@@ -83,18 +83,6 @@ $(document).on('submit', '.edit_user', function(e) {
   });
 });
 
-$(document).ready(function() {
-  $('#id_label_single, .add_product_to_combo_product').select2({theme: 'bootstrap'})
-});
-
-$(document).on('click', '#get_store', function() {
-  $.ajax({
-    url: '/manager/stores',
-    type: 'get',
-    dataType: 'script'
-  });
-});
-
 $(document).on('change', '#provinces', function() {
   var province_id = $('#provinces').val();
 
@@ -119,14 +107,18 @@ $(document).on('submit', '.edit_store', function(e) {
 
       if(data.errors) {
         show_errors(data.errors, '_edit');
-        alert(I18n.t("stores.edit.fail"));
+        $('#message_store').addClass('alert-danger d-block');
+        $('#message_store').removeClass('alert-success');
+        $('#content_store').html(I18n.t("stores.edit.error"));
       } else {
-        alert(I18n.t("stores.edit.success"));
-        $
-        $('#edit_form').html('');
+        $('#message_store').addClass('alert-success d-block');
+        $('#message_store').removeClass('alert-danger');
+        $('#content_store').html(I18n.t("stores.edit.success"));
+        $('#store_form').html('');
         $('#address-' + data.success.id).html(data.success.address);
         $('#phone-' + data.success.id).html(data.success.phone);
       }
+      close_alert();
     }
   });
 });
@@ -152,10 +144,17 @@ $(document).on('submit', '.new_store', function(e) {
 
       if(data.errors) {
         show_errors(data.errors, '_new');
+        $('#message_store').addClass('alert-danger d-block');
+        $('#message_store').removeClass('alert-success');
+        $('#content_store').html(I18n.t("stores.add.error"));
       } else {
         $('#table_stores').append(data.success);
-        alert(I18n.t("stores.add.success"));
+        $('#store_form').html('');
+        $('#message_store').addClass('alert-success d-block');
+        $('#message_store').removeClass('alert-danger');
+        $('#content_store').html(I18n.t("stores.add.success"));
       }
+      close_alert();
     }
   });
 });
@@ -171,10 +170,29 @@ $(document).on('change', '.bill_status', function() {
     data: {'status': status},
     success: function(data) {
       if(data.state == "success") {
-        alert(I18n.t("manager.bills.edit.success"));
+        alert(I18n.t("bills.edit.success"));
       } else {
-        alert(I18n.t("manager.bills.edit.fail"));
+        alert(I18n.t("bills.edit.error"));
       }
     }
   });
+});
+
+$(document).on('click', '#get_store', function() {
+  $.ajax({
+    url: '/manager/stores',
+    type: 'get',
+    dataType: 'script'
+  });
+});
+
+function close_alert() {
+  setTimeout(function() {
+    $("#message_store").addClass('d-none');
+    $("#message_store").removeClass('d-block');
+  }, 2000);
+}
+
+$(window).on('popstate', function() {
+  location.reload(true);
 });

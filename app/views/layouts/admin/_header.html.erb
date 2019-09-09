@@ -7,21 +7,9 @@
     </div>
     <div class="navbar-collapse">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item hidden-sm-up">
+        <li class="nav-item nav-right hidden-sm-up">
           <%= link_to "", class: "nav-link nav-toggler waves-effect waves-light" do %>
             <i class="ti-menu"></i>
-          <% end %>
-        </li>
-        
-        <li class="nav-item search-box">
-          <%= link_to "", class: "nav-link waves-effect waves-dark" do %>
-            <i class="fa fa-search"></i>
-          <% end %>
-
-          <%= form_with url: "#", method: "get", class: "app-search" do %>
-            <%= text_field_tag :search, "",  class: "form-control", placeholder: t(".placeholder_search") %>
-            <a class="srh-btn"><i
-                class="fa fa-times"></i></a>
           <% end %>
         </li>
       </ul>
@@ -31,6 +19,15 @@
           <%= link_to "#", class: "nav-link dropdown-toggle text-muted waves-effect waves-dark",
 "data-toggle": "dropdown", "aria-haspopup": "true", "aria-expanded": "false" do %>
             <%= image_tag "avata.png", alt: "user", class: "img-circle", width: Settings.admin.width_avata %>
+          <% end %>
+        </li>
+      </ul>
+
+      <ul class="navbar-nav mr-4 ml-2">
+        <li>
+          <%= link_to destroy_user_session_path, method: :delete,
+            class: "btn btn-danger btn-sm" do %>
+            <i class="fa fa-sign-out"></i> <%= t ".logout" %>
           <% end %>
         </li>
       </ul>

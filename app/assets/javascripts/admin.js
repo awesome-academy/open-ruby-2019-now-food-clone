@@ -14,3 +14,5 @@
 //= require i18n/translations
 //= require select2
 //= require cocoon
+//= require admin/autoNumeric.js
+//= require admin/select2.js

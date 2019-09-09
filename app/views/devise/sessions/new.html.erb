@@ -1,11 +1,11 @@
 <div class="container-login">
-  <div class="d-flex justify-content-center h-100">
-    <div class="card login">
+  <div class="justify-content-center h-100">
+    <div class="login">
       <div class="card-header">
         <h2><%= t ".login" %></h2>
-        <%= render "devise/multiple_login" %>
       </div>
       <div class="card-body">
+        <%= render "devise/multiple_login" %>
         <%= form_for resource, as: resource_name, url: session_path(resource_name) do |f| %>
           <%= render "devise/shared/error_messages", resource: resource %> 
           <div class="input-group form-group">

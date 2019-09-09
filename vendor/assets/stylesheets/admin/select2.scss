@@ -11,7 +11,8 @@
   background-color: #fff;
   background-clip: padding-box;
   border: 1px solid #ced4da;
-  transition: border-color 0.15s 
+  transition: border-color 0.15s;
+  border-radius: 4px;
 }
 
 .select2-container .select2-selection--single {
@@ -86,6 +87,8 @@ padding: 0;
   left: -100000px;
   width: 100%;
   z-index: 1051;
+  top: 0;
+  position: absolute;
 }
 
 .select2-results {

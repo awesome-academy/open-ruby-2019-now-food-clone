@@ -36,8 +36,8 @@ user:
     enum_admin: "admin"
     enum_manager: "manager"
     enum_normal: "mormal"
-    number_admin: 1
-    number_manager: 2
+    number_admin: 2
+    number_manager: 1
     number_normal: 0
 admin:
   width_avata: 30
@@ -67,6 +67,7 @@ combo:
 upload:
   default: "default.png"
   dir: "uploads"
+  default: "default.png"
   image:
     default: "default.png"
   width: 200
@@ -78,3 +79,5 @@ product:
   height: 200
 step: 1
 zero: 0
+unit: "VND"
+url_select2: "/assets/admin/select2.js"
