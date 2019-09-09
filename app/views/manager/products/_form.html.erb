@@ -24,8 +24,7 @@
       <%= f.label t(".store") %>
       <%= f.select :store_id, options_for_select(get_stores,
         selected: f.object.store_id),
-        {include_blank: false}, {class: "js-example-basic-single js-states
-        form-control",id: "id_label_single"} %>
+        {include_blank: false}, {class: "select2 form-control"} %>
       <div class="my_error">
         <% @product.errors[:store_id].each do |error| %>
           <p><%= error %></p>
@@ -39,13 +38,19 @@
       <%= render "image_fields", {f: image} %>
     <% end %>
     <div class="links">
-      <%= link_to_add_association t(".add_image"), f, :images,
-        class: "btn btn-success btn-sm mt-3" %>
+      <%= link_to_add_association f, :images,
+        class: "btn btn-success btn-sm mt-3" do %>
+        <i class="fa fa-plus"></i> <%= t ".add_image" %> 
+      <% end %>
     </div>
   </div><hr>
 
-  <%= f.submit t(".submit"), class: "btn btn-primary btn-sm mt-3",
-    data: {disable_with: false} %>
-  <%= button_tag t(".reset"), type: :reset,
-    class: "btn btn-warning btn-sm mr-2 mt-3" %>
+  <%= button_tag class: "btn btn-primary btn-sm mt-3",
+    data: {disable_with: false} do %>
+    <i class="fa fa-paper-plane"></i> <%= t ".submit" %> 
+  <% end %>
+  <%= button_tag type: :reset,
+    class: "btn btn-warning btn-sm mr-2 mt-3" do %>
+    <i class="fa fa-reply"></i> <%= t ".reset" %>
+  <% end %>
 <% end %>

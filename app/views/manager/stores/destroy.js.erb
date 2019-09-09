@@ -4,5 +4,6 @@
   $('#content_store').html('<%= t ".success" %>');
 <% else %>
   $('#message_store').addClass('alert-danger d-block');
-  $('#content_store').html('<%= t ".fail" %>');
+  $('#content_store').html('<%= t ".error" %>');
 <% end %>
+close_alert();

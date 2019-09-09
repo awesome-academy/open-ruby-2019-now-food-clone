@@ -19,14 +19,14 @@
       <div class="col">
         <%= label_tag t(".provinces") %>
         <%= select_tag "store[province_id]", options_for_select(get_provinces),
-          id: "provinces", class: "form-control mb-1" %>
+          id: "provinces", class: "form-control mb-1 select2" %>
       </div>
 
       <div class="col" id="districts">
         <%= f.label t(".districts") %>
         <%= f.select :district_id, options_for_select(get_distric_brothers(@store),
           selected: @store.district_id),
-          {include_blank: false}, class: "form-control" %>
+          {include_blank: false}, class: "form-control select2" %>
         <div class="my_error mb-2" id="error_district_id_<%= type %>"></div>
       </div>
     </div>
@@ -35,7 +35,7 @@
       <div class="col">
         <%= label_tag t(".provinces") %>
         <%= select_tag "store[province_id]", options_for_select(get_provinces),
-          id: "provinces", class: "form-control" %>
+          {prompt: t(".select"), id: "provinces", class: "form-control select2"} %>
       </div>
 
       <div class="col" id="districts">
