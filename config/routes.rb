@@ -18,6 +18,8 @@ Rails.application.routes.draw do
     resources :combos
     resources :comments, only: [:create, :destroy]
     resources :stores
+    resources :products
+    resources :bills
     resources :districts, only: [:index]
   end
 end

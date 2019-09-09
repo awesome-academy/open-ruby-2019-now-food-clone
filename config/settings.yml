@@ -54,6 +54,8 @@ manager:
     num_in_page: 10
   store:
     num_in_page: 10
+  bill:
+    num_in_page: 10
 page:
   num_in_page: 10
   start: 1

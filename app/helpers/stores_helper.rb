@@ -4,8 +4,8 @@ module StoresHelper
   end
 
   def get_distric_brothers store
-    return nil if store.id.blank?
-    District.get_district_by_province_id(store.district.province_id).
+    return if store.id.blank?
+    District.by_province_id(store.district.province_id).
       pluck :name, :id
   end
 

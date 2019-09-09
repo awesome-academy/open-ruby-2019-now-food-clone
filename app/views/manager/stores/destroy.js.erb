@@ -1,2 +1,8 @@
-$('#store-<%= @store.id %>').remove();
-alert('<%= t ".success" %>');
+<% if @store.destroyed? %>
+  $('#store-<%= @store.id %>').remove();
+  $('#message_store').addClass('alert-success d-block');
+  $('#content_store').html('<%= t ".success" %>');
+<% else %>
+  $('#message_store').addClass('alert-danger d-block');
+  $('#content_store').html('<%= t ".fail" %>');
+<% end %>

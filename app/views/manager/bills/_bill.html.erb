@@ -1,0 +1,18 @@
+<tr id="<%= "bill-#{bill.id}" %>" class="<%= "stt-#{bill_counter}" %>">
+  <td><%= get_index_page bill_counter %></td>
+  <td><%= bill.user_name %></td>
+  <td><%= bill.address %></td>
+  <td><%= bill.store_address %></td>
+  <td>
+    <%= select_tag :status,
+      options_for_select(enum_options_for_select(Bill, :status), selected: bill.status),
+      class: "form-control bill_status", bill_id: bill.id %>
+  </td>
+  <td><%= l bill.created_at, format: :date_month_year %></td>
+  <td><%= l bill.updated_at, format: :date_month_year %></td>
+  <td>
+    <%= link_to manager_bill_path(bill), class: "btn btn-info btn-sm" do %>
+      <i class="fa fa-eye"></i>
+    <% end %>
+  </td>
+</tr>

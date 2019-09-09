@@ -22,7 +22,7 @@ class Admin::UsersController < AdminController
   end
 
   def update
-    if @user.update user_params
+    if @user.update_attributes user_params
       render json: {success: @user}
     else
       render json: {errors: @user.errors}
