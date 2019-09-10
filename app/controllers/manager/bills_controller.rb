@@ -1,4 +1,5 @@
 class Manager::BillsController < ManagerController
+  load_and_authorize_resource
   before_action :load_bill, only: %i(show update destroy)
 
   def index

@@ -2,5 +2,5 @@
   alert('<%= t ".fail" %>');
 <% else %>
   $('#reply_comment_<%= @comment.parent_comment_id %>').append('<%= j render "comment", comment: @comment %>');
-  $('#content_comment-<%= @comment.parent_comment_id %>').val('');
+  $('#content_comment_<%= @comment.parent_comment_id %>').val('');
 <% end %>

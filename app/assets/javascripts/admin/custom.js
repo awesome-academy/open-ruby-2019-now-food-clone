@@ -1,18 +1,16 @@
 function edit_user(id) {
   $.ajax({
-    url: '/admin/edit_user',
+    url: '/admin/users/'+ id +'/edit',
     type: 'get',
-    dataType: 'script',
-    data: {'id': id}
+    dataType: 'script'
   });
 }
 
 function show_user(id) {
   $.ajax({
-    url: '/admin/show_user',
+    url: '/admin/users/'+ id,
     type: 'get',
-    dataType: 'script',
-    data: {'id': id}
+    dataType: 'script'
   });
 }
 
@@ -32,7 +30,7 @@ function show_errors(errors, type) {
 
 $(document).on('click', '#form_new_user', function() {
   $.ajax({
-    url: '/admin/new_user',
+    url: '/admin/users/new',
     type: 'get',
     dataType: 'script'
   });

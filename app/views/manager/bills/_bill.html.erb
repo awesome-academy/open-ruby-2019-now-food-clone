@@ -11,8 +11,10 @@
   <td><%= l bill.created_at, format: :date_month_year %></td>
   <td><%= l bill.updated_at, format: :date_month_year %></td>
   <td>
-    <%= link_to manager_bill_path(bill), class: "btn btn-info btn-sm" do %>
-      <i class="fa fa-eye"></i>
+    <% if can? :read, bill %>
+      <%= link_to manager_bill_path(bill), class: "btn btn-info btn-sm" do %>
+        <i class="fa fa-eye"></i>
+      <% end %>
     <% end %>
   </td>
 </tr>

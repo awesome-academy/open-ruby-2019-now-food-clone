@@ -1,23 +1,22 @@
 class Admin::UsersController < AdminController
-  before_action :load_user, except: %i(index create new_user)
-  before_action :is_admin
+  before_action :load_user, except: %i(index create new)
 
   def index
     @search = User.ransack params[:search]
     @users = @search.result.order_by_role.page(params[:page]).per Settings.admin.user.num_in_page
   end
 
-  def new_user
+  def new
     @user = User.new
 
     respond_to :js
   end
 
-  def show_user
+  def show
     respond_to :js
   end
 
-  def edit_user
+  def edit
     respond_to :js
   end
 
@@ -61,9 +60,5 @@ class Admin::UsersController < AdminController
     return if @user
     flash[:danger] = t(".not_exits")
     redirect_to root_path
-  end
-
-  def is_admin
-    redirect_to root_path unless current_user.admin?
   end
 end

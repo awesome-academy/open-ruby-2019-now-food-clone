@@ -1,4 +1,5 @@
 //= require jquery3
+//= require autonumeric
 //= require rails-ujs
 //= require activestorage
 //= require popper

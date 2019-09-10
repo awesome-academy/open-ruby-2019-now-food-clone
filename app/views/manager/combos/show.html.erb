@@ -9,15 +9,18 @@
         </div>
       </div>
     </div>
-
-    <div class="col-3">
-      <strong><%= t ".thumbnails" %></strong>
-      <%= render "image_show", images: get_thumbnails(@combo), id: "image-1" %>
-    </div>
-    <div class="col-3">
-      <strong><%= t ".images" %></strong>
-      <%= render "image_show", images: get_images(@combo), id: "image-2" %>
-    </div>
+    <% if count_thumbnails(@combo) > Settings.zero %>
+      <div class="col-3">
+        <strong><%= t ".thumbnails" %></strong>
+        <%= render "image_show", images: get_thumbnails(@combo), id: "image-1" %>
+      </div>
+    <% end %>
+    <% if count_images(@combo) > Settings.zero %>
+      <div class="col-3">
+        <strong><%= t ".images" %></strong>
+        <%= render "image_show", images: get_images(@combo), id: "image-2" %>
+      </div>
+    <% end %>
   </div>
 
   <div class="row">

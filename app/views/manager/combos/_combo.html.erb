@@ -2,20 +2,26 @@
   <td><%= get_index_page combo_counter %></td>
   <td><%= image_tag get_thumnail(combo) %></td>
   <td><%= combo.name %></td>
-  <td><%= combo.price %></td>
+  <td><%= number_to_vnd combo.price %></td>
   <td><%= combo.status %></td>
   <td>
-    <%= link_to manager_combo_path(combo), class: "btn btn-info btn-sm" do %>
-      <i class="fa fa-eye"></i>
+    <% if can? :read, combo %>
+      <%= link_to manager_combo_path(combo), class: "btn btn-info btn-sm" do %>
+        <i class="fa fa-eye"></i>
+      <% end %>
     <% end %>
 
-    <%= link_to edit_manager_combo_path(combo), class: "btn btn-warning btn-sm" do %>
-      <i class="fa fa-edit"></i>
+    <% if can? :update, combo %>
+      <%= link_to edit_manager_combo_path(combo), class: "btn btn-warning btn-sm" do %>
+        <i class="fa fa-edit"></i>
+      <% end %>
     <% end %>
 
-    <%= link_to manager_combo_path(combo), method: :delete, data: {confirm: t(".sure")},
-      class: "btn btn-danger btn-sm" do %>
-      <i class="fa fa-trash"></i>
+    <% if can? :destroy, combo %>
+      <%= link_to manager_combo_path(combo), method: :delete, data: {confirm: t(".sure")},
+        class: "btn btn-danger btn-sm" do %>
+        <i class="fa fa-trash"></i>
+      <% end %>
     <% end %>
   </td>
 </tr>

@@ -1,4 +1,5 @@
 class Manager::StoresController < ManagerController
+  load_and_authorize_resource
   before_action :load_store, only: %i(edit update destroy)
 
   def index

@@ -1,11 +1,13 @@
 <div class="container-fluid">
   <div class="row page-titles">
     <div class="col-md-5 align-self-center">
-      <button class="btn btn-sm btn-success" id="form_new_user"
-        data-toggle="modal" data-target="#form_new">
-        <i class="fa fa-plus"></i>
-        <%=  t ".new_user" %>
-      </button>
+      <% if can? :create, User %>
+        <button class="btn btn-sm btn-success" id="form_new_user"
+          data-toggle="modal" data-target="#form_new">
+          <i class="fa fa-plus"></i>
+          <%=  t ".new_user" %>
+        </button>
+      <% end %>
     </div>
     <div class="col-md-7 align-self-center text-right">
       <div class="d-flex justify-content-end align-items-center">
