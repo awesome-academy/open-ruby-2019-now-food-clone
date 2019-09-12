@@ -1,9 +1,11 @@
 <div class="container-fluid">
   <div class="row page-titles">
     <div class="col-md-5 align-self-center">
-      <%= link_to new_manager_product_path,
-        class: "btn btn-sm btn-success" do %>
-        <i class="fa fa-plus"></i> <%= t ".new_product" %>
+      <% if can? :create, Product %>
+        <%= link_to new_manager_product_path,
+          class: "btn btn-sm btn-success" do %>
+          <i class="fa fa-plus"></i> <%= t ".new_product" %>
+        <% end %>
       <% end %>
     </div>
     <div class="col-md-7 align-self-center text-right">

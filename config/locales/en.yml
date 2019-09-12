@@ -94,7 +94,7 @@ en:
         remember_me: "Remember me"
     registrations:
       edit:
-        edit: "Edit"
+        edit: "Edit profile"
         email: "Email"
         waiting_confirmation: "Currently waiting confirmation for:"
         password: "password"

@@ -23,6 +23,14 @@ module ApplicationHelper
     imageable.images.image
   end
 
+  def count_thumbnails imageable
+    imageable.images.thumbnail.count
+  end
+
+  def count_images imageable
+    imageable.images.image.count
+  end
+
   def number_to_vnd number
     "#{number_to_currency(number,unit: "",separator: ",",delimiter: ".")} #{Settings.unit}"
   end

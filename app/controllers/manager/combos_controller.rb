@@ -1,4 +1,5 @@
 class Manager::CombosController < ManagerController
+  load_and_authorize_resource
   before_action :load_combo, except: %i(index new create)
   before_action :load_products, only: %i(show)
   before_action :load_parent_comments, only: %i(show)

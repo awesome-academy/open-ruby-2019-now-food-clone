@@ -3,14 +3,19 @@
   <td id="phone-<%= store.id %>"><%= store.phone %></td>
   <td id="address-<%= store.id %>"><%= store.address %></td>
   <td>
-    <%= link_to edit_manager_store_path(store),
-      class: "btn btn-warning btn-sm", remote: true do %>
-      <i class="fa fa-edit"></i>
+    <% if can? :read, store %>
+      <%= link_to edit_manager_store_path(store),
+        class: "btn btn-warning btn-sm", remote: true do %>
+        <i class="fa fa-edit"></i>
+      <% end %>
     <% end %>
-    <%= link_to manager_store_path(store), method: :delete,
-      data: {confirm: t(".sure")}, remote: true,
-      class: "btn btn-danger btn-sm" do %>
-      <i class="fa fa-trash"></i>
+
+    <% if can? :update, store %>
+      <%= link_to manager_store_path(store), method: :delete,
+        data: {confirm: t(".sure")}, remote: true,
+        class: "btn btn-danger btn-sm" do %>
+        <i class="fa fa-trash"></i>
+      <% end %>
     <% end %>
   </td>
 </tr>
