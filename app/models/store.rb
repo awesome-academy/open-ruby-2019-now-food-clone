@@ -7,7 +7,11 @@ class Store < ApplicationRecord
   has_many :combos, dependent: :destroy
   has_many :products, dependent: :destroy
 
+  delegate :name, to: :district, prefix: true
+
   validates :address, presence: true
   validates :phone, presence: true
   validates :district_id, presence: true
+
+  scope :by_province_id, ->(province_id){where(districts: {province_id: province_id})}
 end

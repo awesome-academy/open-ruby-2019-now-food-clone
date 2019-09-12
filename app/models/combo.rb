@@ -1,5 +1,5 @@
 class Combo < ApplicationRecord
-  COMBO_PARAMS = [:name, :price, :store_id, combo_products_attributes:
+  COMBO_PARAMS = [:name, :price, :store_id, :status, combo_products_attributes:
     [:id, :combo_id, :product_id, :count, :_destroy], images_attributes:
     [:id, :url, :alt, :image_type, :_destroy]].freeze
 

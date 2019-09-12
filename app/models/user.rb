@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  USER_PARAMS = %i(phone address name email password password_confirmation role).freeze
+  USER_PARAMS = %i(phone address name email cost password password_confirmation role).freeze
 
   enum role: {normal: 0, manager: 1, admin: 2}
   
@@ -21,6 +21,7 @@ class User < ApplicationRecord
   validates :name, presence: true, length:
     {minimum: Settings.user.min_name_length,
     maximum: Settings.user.max_name_length}, allow_nil: true
+  validates :cost, presence: true, numericality: {greater_than: Settings.zero}  
 
   scope :order_by_role, ->{order role: :desc}
 

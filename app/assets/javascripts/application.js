@@ -1,4 +1,4 @@
-//= require jquery2
+//= require jquery3
 //= require rails-ujs
 //= require activestorage
 //= require popper
@@ -13,3 +13,7 @@
 //= require parallax.min.js
 //= require mail-script.js
 //= require main.js
+//= require select2
+//= require admin/autoNumeric.js
+//= require admin/select2.js
+//= require custom.js
