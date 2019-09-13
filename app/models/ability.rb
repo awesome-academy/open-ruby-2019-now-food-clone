@@ -4,6 +4,7 @@ class Ability
   def initialize user
     can :read, District
     can :read, Province
+    can :read, Store
 
     if user.admin?
       can [:read, :create], User

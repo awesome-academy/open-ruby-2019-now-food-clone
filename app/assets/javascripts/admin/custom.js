@@ -15,8 +15,7 @@ function show_user(id) {
 }
 
 function reset_errors() {
-  $('#error_name', '#error_address', '#error_district_id', '#error_email',
-    '#error_password', '#error_password_confirmation').html('');
+  $('.my_error').html('');
 }
 
 function show_errors(errors, type) {

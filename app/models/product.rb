@@ -1,8 +1,8 @@
 class Product < ApplicationRecord
-  PRODUCT_PARAMS = [:name, :price, :store_id, images_attributes:
+  PRODUCT_PARAMS = [:name, :price, :store_id, :status, images_attributes:
     [:id, :url, :alt, :image_type, :_destroy]].freeze
 
-  enum status: {inactive: 0, active: 1}
+  enum status: {in_active: 0, active: 1}
 
   belongs_to :store
   has_many :combo_products, dependent: :destroy
