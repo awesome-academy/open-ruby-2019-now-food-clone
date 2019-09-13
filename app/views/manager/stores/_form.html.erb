@@ -46,8 +46,12 @@
     </div>
   <% end %>
 
-  <%= f.submit t(".submit"), class: "btn btn-primary btn-sm mt-3",
-    data: {disable_with: false} %>
-  <%= button_tag t(".reset"), type: :reset,
-    class: "btn btn-warning btn-sm mr-2 mt-3" %>
+  <%= button_tag class: "btn btn-primary btn-sm mt-3" do %>
+    <i class="fa fa-paper-plane"></i> <%= t ".submit" %>
+  <% end %>
+  
+  <%= button_tag type: :reset,
+    class: "btn btn-warning btn-sm mr-2 mt-3" do %>
+    <i class="fa fa-reply"></i> <%= t ".reset" %>
+  <% end %>
 <% end %>

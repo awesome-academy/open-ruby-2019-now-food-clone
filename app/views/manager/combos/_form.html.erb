@@ -30,6 +30,13 @@
         <% end %>
       </div>
     </div>
+    <div class="col-2">
+      <%= f.label t(".status") %>
+      <%= f.select :status,
+        options_for_select(enum_options_for_select(Combo, :status),
+        selected: f.object.status), {include_blank: false},
+        {class: "form-control select2"} %>
+    </div>
   </div>
   <div id="tasks">
     <%= f.fields_for :images do |image| %>

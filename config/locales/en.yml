@@ -30,6 +30,10 @@ en:
       error:
         one: "1 error"
         other: "%{count} errors"
+  home_pages:
+    index:
+      province: "Province"
+      district: "District"
   layouts:
     header:
       home: "Home"
@@ -155,6 +159,7 @@ en:
       user:
         sure: "Sure delete ?"
       form:
+        cost: "Cost"
         name: "Name"
         address: "Address"
         phone: "Phone"
@@ -369,6 +374,7 @@ en:
       new:
         new_combo: "New combo"
       form:
+        status: "Status"
         name_product: "Name product"
         count_product: "Count"
         name: "Name"
@@ -437,6 +443,7 @@ en:
       new:
         new_product: "New product"
       form:
+        status: "Status"
         add_image: "Add image"
         name: "Name"
         price: "Price"

@@ -1,0 +1,2 @@
+$('#stores').html('<%= j render partial: "home_pages/store", collection: @stores %>');
+$('#paginator').html('<%= j paginate(@stores, remote: true, theme: Settings.theme.theme_config) %>');
