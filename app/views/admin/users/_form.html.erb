@@ -29,6 +29,14 @@
 
   <div class="row">
     <div class="col">
+      <%= f.label t(".cost") %>
+      <%= f.text_field :cost, class: "form-control mb-1" %>
+      <div class="my_error mb-2" id="error_cost_<%= type %>"></div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
       <%= f.label t(".password") %>
       <%= f.password_field :password, class: "form-control mb-1" %>
       <div class="my_error mb-2" id="error_password_<%= type %>"></div>

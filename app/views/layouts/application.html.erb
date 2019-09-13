@@ -8,8 +8,10 @@
   </head>
   <body>
     <%= render "layouts/header" %>
-    <%= render "layouts/banner" %>
-    <%= yield %>
+    <%= yield :banner %>
+    <div class="container mt-70">
+      <%= yield %>
+    </div>
     <%= render "layouts/footer" %>
   </body>
 </html>

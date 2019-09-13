@@ -1,0 +1,13 @@
+<%= form_tag root_path, method: :get, class: "form-inline" do |f| %>
+  <div class="form-group">
+    <%= select_tag :province_id, options_for_select(get_provinces, selected: 
+      params[:province_id].present? ? params[:province_id] : Settings.province_default),
+      {prompt: t(".select_province"), class: "select2 form-control"} %>
+  </div>
+  <div class="form-group" id="distric"></div>
+  <div class="form-group">
+    <%= button_tag class: "btn btn-success btn-md ml-2" do %>
+      <i class="fa fa-search"></i> <%= t ".search" %>
+    <% end %>
+  </div>
+<% end %>

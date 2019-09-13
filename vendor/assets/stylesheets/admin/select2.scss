@@ -89,6 +89,8 @@ padding: 0;
   z-index: 1051;
   top: 0;
   position: absolute;
+  max-height: 200px;
+  overflow: scroll;
 }
 
 .select2-results {

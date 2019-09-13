@@ -1,0 +1,23 @@
+<% content_for :banner do %>
+  <%= render "layouts/banner" %>
+<% end %>
+
+<div class="container">
+  <section class="mt-4 mb-4">
+    <div class="col-12">
+      <%= render "search" %>
+    </div>
+  </section>
+
+  <section class="m-0">
+    <div class="container m-0">					
+      <div class="row" id="stores">
+        <%= render partial: "home_pages/store", collection: @stores %>
+      </div>
+    </div>
+  </section>
+
+  <div class="mb-3" id="paginator">
+    <%= paginate @stores, remote: true, theme: Settings.theme.theme_config %>
+  </div>
+</div>

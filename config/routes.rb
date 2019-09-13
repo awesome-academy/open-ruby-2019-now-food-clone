@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root to: "home_pages#index"
 
+  resources :stores, only: :show
+
   devise_for :users, controllers: {omniauth_callbacks: "users/omniauth_callbacks"}
 
   scope module: "admin", path: "admin", as: "admin" do

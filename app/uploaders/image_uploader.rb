@@ -13,6 +13,12 @@ class ImageUploader < CarrierWave::Uploader::Base
     %w(jpg jpeg gif png)
   end
 
+  def filename
+    return if original_filename
+
+    @name ||= Digest::MD5.hexdigest File.dirname(current_path) "#{@name}.#{file.extension}"
+  end
+
   def default_url
     ActionController::Base.helpers.asset_path Settings.upload.default
   end
