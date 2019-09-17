@@ -1,0 +1,48 @@
+<div class="d-flex justify-content-between mb-3">
+  <h3><%= t ".combo_product" %></h3><br>
+  <div>
+    <%= link_to root_path, class: "btn btn-sm btn-info" do %>
+      <i class="fa fa-plus"></i> <%= t ".order_continue" %>
+    <% end %>
+    <%= link_to show_order_path, class: "btn btn-sm btn-success" do %>
+      <i class="fa fa-money"></i> <%= t ".payment" %>
+    <% end %>
+  </div>
+</div>
+<div class="">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th><%= t ".stt" %></th>
+        <th><%= t ".name" %></th>
+        <th><%= t ".quantity" %></th>
+        <th><%= t ".store" %></th>
+        <th><%= t ".action" %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @bill_details.each_with_index do |bill_detail, key| %>
+        <%= form_tag update_cart_path, method: :get, class: "form_cart", remote: true do %>
+          <%= hidden_field_tag :type, "#{bill_detail.bill_detailable_type}" %>
+          <%= hidden_field_tag :id, "#{bill_detail.bill_detailable_id}" %>
+          <tr>
+            <td><%= key + 1 %></td>
+            <td><%= bill_detail.bill_detailable_name %></td>
+            <td><%= text_field_tag :quantity, "#{bill_detail.count}", class: "input_count" %></td>
+            <td><%= address_by_store_id bill_detail.bill_detailable_store_id %></td>
+            <td>
+              <%= link_to destroy_cart_path(bill_detailable_type: bill_detail.bill_detailable_type,
+                bill_detailable_id: bill_detail.bill_detailable_id), data: {confirm: t(".sure")},
+                class: "btn btn-danger btn-sm" do %>
+                <i class="fa fa-trash"></i>
+              <% end %>
+              <%= button_tag type: :submit, class: "btn btn-success btn-sm" do %>
+                <i class="fa fa-paper-plane"></i>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+</div>

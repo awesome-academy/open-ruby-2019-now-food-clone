@@ -1,4 +1,4 @@
-<%= form_tag root_path, method: :get, class: "form-inline" do |f| %>
+<%= form_tag root_path, method: :get, class: "form-inline" do %>
   <div class="form-group">
     <%= select_tag :province_id, options_for_select(get_provinces, selected: 
       params[:province_id].present? ? params[:province_id] : Settings.province_default),

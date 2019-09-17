@@ -1,0 +1,5 @@
+<% if @products.present? %>
+  $('#list_products').append('<%= j render partial: "products/product", collection: @products %>');
+<% else %>
+  $('#load_product').fadeOut();
+<% end %>

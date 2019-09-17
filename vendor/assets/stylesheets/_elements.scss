@@ -175,9 +175,10 @@ h6 {
 		color: $primary;
 		border: 1px solid $primary;
 		background: $white;
+		font-size: 1em;
 
 		&:hover {
-			color: $white;
+			color: $while_e !important;
 			background: $primary;
 			border: 1px solid transparent;
 		}

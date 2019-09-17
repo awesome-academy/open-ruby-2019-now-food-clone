@@ -1,0 +1,5 @@
+<% if @combos.present? %>
+  $('#list_combos').append('<%= j render partial: "combos/combo", collection: @combos %>');
+<% else %>
+  $('#load_combo').fadeOut();
+<% end %>
