@@ -19,4 +19,6 @@ class Product < ApplicationRecord
     allow_destroy: true
 
   scope :products_of_current_user, ->(product_ids){where id: product_ids}
+  scope :by_store_id, ->(store_id){where store_id: store_id}
+  scope :by_product_ids, ->(product_ids){where id: product_ids}
 end

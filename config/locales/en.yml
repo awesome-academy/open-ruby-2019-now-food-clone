@@ -185,10 +185,29 @@ en:
     edit:
       error: "Edit store fail"
       success: "Edit store success"
+    show:
+      slogan: "Order food, delivery is only 20'"
+      description: "There are %{count} locations in Hanoi from 06:00 - 24:00"
+      product: "Products"
+      combo: "Combos"
+      add_to_cart: "Add to cart"
+      see_more: "See more"
   bills:
     edit:
       error: "Update bill fail"
       success: "Update bill success"
+  products:
+    product:
+      add_to_cart: "Add to cart"
+      comment:
+        one: "1 comment"
+        other: "%{count} comments"
+  combos:
+    combo:
+      add_to_cart: "Add to cart"
+      comment:
+        one: "1 comment"
+        other: "%{count} comments"
   manager:
     districts:
       districts:

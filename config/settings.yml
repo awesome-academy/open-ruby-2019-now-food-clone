@@ -85,3 +85,5 @@ url_format_combo: "/assets/admin/format_price_combo.js"
 url_format_product: "/assets/admin/format_price_product.js"
 url_store: "store.jpg"
 province_default: 1
+num_in_web: 4
+quantity: 1

@@ -1,5 +1,13 @@
 @import 'variables';
 
+.input_count {
+  width: 100% !important;
+  height: 36px !important;
+  border: none !important;
+  line-height: 100px !important;
+  padding: 5px 10px !important;
+}
+
 .login {
   background: $darkcyan;
   width: 70%;
@@ -8,6 +16,18 @@
 
 .login .card-body {
   padding-bottom: 50px;
+}
+
+.thumb > img {
+  width: 100%;
+}
+
+.single-blog h4 {
+  color: $primary-color !important;
+}
+
+.buton_add:hover {
+  color: $while_e !important;
 }
 
 .container-login{

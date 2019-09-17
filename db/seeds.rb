@@ -20,11 +20,12 @@ User.create!(
   role: Settings.account.manager.role,
   created_at: Time.zone.now)
 
-50.times do |n|
+20.times do |n|
   email = FFaker::Internet::free_email
   name = FFaker::Name.name
   address = FFaker::Address.city
   phone = FFaker::PhoneNumber.phone_number
+  cost = rand(100...999)
 
   User.create!(
     email:  email,
@@ -34,10 +35,11 @@ User.create!(
     address: address,
     phone: phone,
     role: Settings.account.user.role,
+    cost: cost,
     created_at: Time.zone.now)
 end
 
-50.times do |n|
+10.times do |n|
   name = FFaker::AddressCA::province
 
   Province.create!(
@@ -45,7 +47,7 @@ end
     created_at: Time.zone.now)
 end
 
-100.times do |n|
+40.times do |n|
   name = FFaker::Address::city
   
   District.create!(
@@ -54,7 +56,7 @@ end
     created_at: Time.zone.now)
 end
 
-100.times do |n|
+20.times do |n|
   address = FFaker::Address.city
   phone = FFaker::PhoneNumber.phone_number
   user_id = User.ids.sample
@@ -72,7 +74,7 @@ end
     created_at: Time.zone.now)
 end
 
-100.times do |n|
+200.times do |n|
   name = FFaker::Name.name
   status = 1
   price = rand(100000..900000)
@@ -85,7 +87,7 @@ end
     store_id: store_id)
 end
 
-100.times do |n|
+200.times do |n|
   name = FFaker::Product.product_name
   status = 1
   price = rand(100000..900000)
@@ -107,7 +109,7 @@ end
     product_id: product_id)
 end
 
-100.times do |n|
+200.times do |n|
   content = FFaker::Lorem.paragraph
   user_id = User.ids.sample
   parent_comment_id = ([1, 2].sample.eql? 1) ? Comment.ids.sample : ""

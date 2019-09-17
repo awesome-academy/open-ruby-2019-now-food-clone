@@ -1,4 +1,5 @@
 class Manager::CommentsController < ManagerController
+  skip_load_and_authorize_resource
   before_action :load_comment, only: %i(edit update destroy)
 
   def new

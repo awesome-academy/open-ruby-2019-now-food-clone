@@ -23,4 +23,6 @@ class Combo < ApplicationRecord
     allow_destroy: true
 
   scope :combo_of_current_user, ->(combo_ids){where id: combo_ids}
+  scope :by_store_id, ->(store_id){where store_id: store_id}
+  scope :by_combo_ids, ->(combo_ids){where id: combo_ids}
 end

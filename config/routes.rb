@@ -1,5 +1,15 @@
 Rails.application.routes.draw do
   root to: "home_pages#index"
+  get "/update_cart", to: "carts#update"
+  get "/destroy_cart", to: "carts#destroy"
+  get "/show_order", to: "orders#show"
+  post "/payment", to: "orders#create"
+
+  resources :orders, only: %i(index)
+  resources :carts, only: %i(create)
+  resources :products, only: %i(index)
+  resources :combos, only: %i(index)
+  resources :stores, only: %i(show)
 
   resources :stores, only: :show
 
@@ -18,10 +28,10 @@ Rails.application.routes.draw do
     get "/home", to: "homes#index"
 
     resources :combos
-    resources :comments, only: [:create, :destroy]
+    resources :comments, only: %i(create destroy)
     resources :stores
     resources :products
     resources :bills
-    resources :districts, only: [:index]
+    resources :districts, only: %i(index)
   end
 end

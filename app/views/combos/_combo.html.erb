@@ -1,0 +1,13 @@
+<div class="col-lg-3 col-md-6 single-blog">
+  <div class="thumb mb-3">
+    <%= image_tag get_thumnail(combo), class: "img-responsive" %>
+  </div>
+  <button class="genric-btn primary-border buton_add mb-2"
+    quantity="<%= Settings.quantity %>" combo_id="<%= combo.id %>" type="<%= Combo.name %>">
+    <i class="fa fa-shopping-cart"> </i> <%= t ".add_to_cart" %>
+  </button>
+  <h4><%= number_to_vnd combo.price %></h4>
+  <div class="meta-bottom d-flex justify-content-between">
+    <p><i class="fa fa-comment"></i> <%= t ".comment", count: count_comments(combo) %></p>
+  </div>
+</div>

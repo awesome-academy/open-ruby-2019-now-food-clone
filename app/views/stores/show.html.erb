@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row d-flex justify-content-center">
+    <div class="menu-content pb-20 col-lg-8">
+      <div class="title text-center">
+        <h1 class="mb-10"><%= t ".slogan" %></h1>
+        <p><%= t ".description", count: count_stores() %></p>
+      </div>
+    </div>
+  </div>
+  <h4><%= t ".product" %></h4>
+  <div class="row" id="list_products">
+    <%= render @products %>
+  </div>
+  <div class="col-lg-12 d-flex justify-content-center mb-5">
+    <button class="btn btn-sm align-items-center" id="load_product"
+      store_id="<%= params[:id] %>" page="<%= Settings.zero %>">
+      <i class="fa fa-spinner"></i> <%= t ".see_more" %>
+    </button>
+  </div>
+
+  <h4><%= t ".combo" %></h4>
+  <div class="row" id="list_combos">
+    <%= render @combos %>
+  </div>
+  <div class="col-lg-12 d-flex justify-content-center mb-5">
+    <button class="btn btn-sm align-items-center" id="load_combo"
+      store_id="<%= params[:id] %>" page="<%= Settings.zero %>">
+      <i class="fa fa-spinner"></i> <%= t ".see_more" %>
+    </button>
+  </div>
+</div>

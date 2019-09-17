@@ -1,0 +1,53 @@
+<div class="row p-3">
+  <div class="col-6">
+    <h3 class=" mb-3"><%= t ".infomation_custommer" %></h3>
+    <%= form_tag payment_path, method: :post, class: "form-group" do %>
+      <div class="form-group">
+        <%= label_tag :address %>
+        <%= text_field_tag :type, nil, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= label_tag :description %>
+        <%= text_area_tag :description, nil, class: "form-control" %>
+      </div>
+
+      <%= button_tag type: :submit, class: "btn btn-primary btn-sm mt-3" do %>
+        <i class="fa fa-paper-plane"></i> <%= t ".submit" %>
+      <% end %>
+      <%= button_tag type: :reset,
+        class: "btn btn-warning btn-sm mr-2 mt-3" do %>
+        <i class="fa fa-reply"></i> <%= t ".reset" %>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="offset-1 col-5">
+    <div class="">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th><%= t ".stt" %></th>
+            <th><%= t ".name" %></th>
+            <th><%= t ".quantity" %></th>
+            <th><%= t ".price" %></th>
+            <th><%= t ".store" %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @bill_details.each_with_index do |bill_detail, key| %>
+            <tr>
+              <td><%= key + 1 %></td>
+              <td><%= bill_detail.bill_detailable_name %></td>
+              <td><%= bill_detail.count %></td>
+              <td><%= number_to_vnd bill_detail.bill_detailable_price %></td>
+              <td><%= address_by_store_id bill_detail.bill_detailable_store_id %></td>
+            </tr>
+          <% end %>
+          <tr>
+            <td colspan="3"><strong><%= t ".sum_money" %></strong></td>
+            <td colspan="2"><strong><%= number_to_vnd sum_money(@bill_details) %></strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

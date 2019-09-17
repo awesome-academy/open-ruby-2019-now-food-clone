@@ -1,4 +1,5 @@
 class AdminController < ActionController::Base
+  load_and_authorize_resource unless: :devise_controller?
   before_action :authenticate_user!
   before_action :verify_admin
 
