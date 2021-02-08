@@ -28,7 +28,7 @@ gem "ransack"
 gem "i18n-js"
 gem "select2-rails"
 gem "cocoon"
-gem "carrierwave", "~> 2.0"
+gem "carrierwave", "~> 2.1"
 gem "autonumeric-rails"
 gem "cancancan"
 
